@@ -1,5 +1,5 @@
 # Cahier de suivi du projet de Félix Fonteneau
-## Séance du 20 Décembre 2017
+### -Séance du 20 Décembre 2017
 
 Tâches effectuées :
 - Décomposition des besoins matériels (cf fig.1)
