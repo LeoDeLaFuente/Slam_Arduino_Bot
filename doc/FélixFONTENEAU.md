@@ -1,9 +1,5 @@
-**Cahier de suivi du projet de Félix Fonteneau**
-
-*** Code Markdown ***
 *********************
-
-Title 1
+Cahier de suivi du projet de Félix Fonteneau
 ==
 Title 2
 -
