@@ -1,6 +1,4 @@
+# Cahier de suivi du projet de Félix Fonteneau
 *********************
-Cahier de suivi du projet de Félix Fonteneau
-==
-*********************
-*Séance du 20 Décembre 2017
+## Séance du 20 Décembre 2017
 <!-- -->
