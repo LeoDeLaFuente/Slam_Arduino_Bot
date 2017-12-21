@@ -7,3 +7,5 @@ Tâches effectuées :
 - Recherches bibliographique des différentes option afin de réaliser le traitement de données (processing/ROS) 
 <!-- -->
 *********************
+
+### -Séance du .. Janvier 2018
