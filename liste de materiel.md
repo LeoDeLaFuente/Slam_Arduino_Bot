@@ -6,37 +6,37 @@ Voici la liste du materiel que nous utilisons/utiliserons pour la réalisation d
 *****
 #### ROBOT
 - 2 arduinos
-Nous utilisons 2 cartes ATMEL de type mini
+Nous utilisons 2 cartes ATMEL de type mini  
 
 
 - carcasse
-  + carcasse en bois ? 
+  + carcasse en bois ?   
 
 
 - Antennes RF
-LORAM ?
+LORAM ?  
 
 
-- Une batterie
+- Une batterie  
 
 
 
-- tourelle :
-  + Un plateau pivotant
+- tourelle :  
+  + Un plateau pivotant  
   
-  + servo moteur
-  de type ... 
+  + servo moteur  
+  de type ...   
   
-  + laser de mesure de distance
-  de type ...
+  + laser de mesure de distance  
+  de type ...  
    
-  + compass ? 
+  + compass ?   
 
  
-- Déplacement:
-  + Deux roues codeuses
+- Déplacement:  
+  + Deux roues codeuses  
   
-  + Une roue folle
+  + Une roue folle  
   
   
 
