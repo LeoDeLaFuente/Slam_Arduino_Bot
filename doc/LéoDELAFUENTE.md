@@ -3,6 +3,6 @@
 *******************
 ## Présentation
 
-Dans le cadre de notre cours d'arduino en PEIP2 de l'école Polytech Nice-Sophia (prépa intégré), nous 
+Ce projet réalisé dans le cadre de notre cours d'arduino en PEIP2 de l'école Polytech Nice-Sophia (prépa intégré) consiste à conevoir un robot permettant de cartographier une salle. Nous allons pour cela utiliser une carte arduino.
 
 ## Seance du 21 Décembre
