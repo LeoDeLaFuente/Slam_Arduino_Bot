@@ -8,13 +8,26 @@ Voici la liste du materiel que nous utilisons/utiliserons pour la réalisation d
 - 2 arduinos
 Nous utilisons 2 cartes ATMEL de type mini
 
+- carcasse
+carcasse en bois ? 
+
 - Antennes RF
+LORAM ?
 
--Une batterie
+- Une batterie
 
--tourelle :
+
+- tourelle :
   + servo moteur
+  de type ... 
+  
   + laser de mesure de distance
+  de type ...
+  
+  +compass ? 
+ 
+
+  
 
 
 
