@@ -22,7 +22,7 @@ LORAM ?
 
 
 - tourelle :
-  +Un plateau pivotant
+  + Un plateau pivotant
   
   + servo moteur
   de type ... 
@@ -36,7 +36,7 @@ LORAM ?
 - Déplacement:
   + Deux roues codeuses
   
-  +Une roue folle
+  + Une roue folle
   
   
 
