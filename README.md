@@ -8,6 +8,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 ## Présentation
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ce projet à pour but de réaliser une carte (2D) d'une salle à l aide d'un robot se déplaçant dans cette pièce et réalisant des mesures graçe à un télémètre Laser. Ce robot sera dans un premier temps dirigé par utilisateur graçe à un ordinateur et une connexion sans fil. Nous utiliserons pour cela le logiciel processing permettant de traiter les données, afficher la carte et interpréter les commandes de l'utilisateur. 
 
-![Processing](/Images/processing3-logo.png){ float: right; }
+![logo Processing](/Images/processing3-logo.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le but ultime de ce projet serait que le robot se déplace de manière autonome dans la pièce. Cette technique appelé SLAM (Simultaneous Location and Mapping Robot) est très complexe, et c'est pourquoi nous utiliserions le l'outil ROS (qui est une surcouche de Linux permettant lacréation de logiciel pour la robotique) qui est très utilisé dans le domaine des robots et comporte des bilbliotèque open sources de SLAM. Nous plaçons cette partie de projet dans un second plan, car c'est une partie très informatique (le cours est de base axé sur la création d'un projet arduino), et ROS est un outils très complexe qui nous ai pour l'instant inconnue.
+![logo ROS](/Images/rosLarge.png)
