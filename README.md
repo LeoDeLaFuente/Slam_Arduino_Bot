@@ -16,4 +16,4 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Suite à la séance du 21 Décembre 2017 nous avons créé un schéma récapitulatif du projet.
 
-![Schéma projet](/Images/schéma.jpeg)
+![Schéma projet](/Images/schéma.jpg)
