@@ -14,4 +14,4 @@ Ce projet réalisé dans le cadre de notre cours d'arduino en PEIP2 de l'école 
  
  ## Travail personnel du 22 Décembre
  
-  -##### Commencement du [dessin 3d du robot] (/robot) sous Autovad Inventor 
+  - ##### Commencement du [dessin 3d du robot] (/robot) sous Autovad Inventor 
