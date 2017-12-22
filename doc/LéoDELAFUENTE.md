@@ -12,3 +12,6 @@ Ce projet réalisé dans le cadre de notre cours d'arduino en PEIP2 de l'école 
  - ##### Création du schéma du projet
  ![Schéma projet](/Images/schéma.jpg)
  
+ ## Travail personnel du 22 Décembre
+ 
+  -##### Commencement du [dessin 3d du robot] (/robot) sous Autovad Inventor 
