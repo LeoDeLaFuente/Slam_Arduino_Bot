@@ -4,9 +4,10 @@
 - **Séance du 20 Décembre 2017**
 
 Tâches effectuées :
-- Décomposition des besoins matériels (cf Liste)
-- Décomposition des différents modules de code informatiques.
-- Recherches bibliographique des différentes options permettant d'aboutir à réaliser le traitement de données sur l'ordinateur (processing/ROS).  
+- Décomposition des besoins matériels (cf Liste).
+- Décomposition des différents modules de code informatiques nécessaires.
+- Recherches bibliographique des différentes options permettant d'aboutir à réaliser le traitement de données sur l'ordinateur (processing/ROS).
+-Déveleppement du GitHub.
 ***
 
 - **Séance du .. Janvier 2018**
