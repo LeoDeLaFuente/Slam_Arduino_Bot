@@ -2,7 +2,7 @@
 
 Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Polytech'Nice Sophia
 * * *
-# Slam Arduino Bot
+# Mapping with an Arduino Robot
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Projet école de création d'un robot arduino permettant la cartographie d'une salle sans données GPS.
 
 ## Présentation
@@ -10,7 +10,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 ![logo Processing](/Images/processing3-logo.png) ![logo ROS](/Images/rosLarge.png) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le but ultime de ce projet serait que le robot se déplace de manière autonome dans la pièce. Cette technique appelé SLAM (Simultaneous Location and Mapping Robot) est très complexe, et c'est pourquoi nous utiliserions le l'outil ROS (qui est une surcouche de Linux permettant lacréation de logiciel pour la robotique) qui est très utilisé dans le domaine des robots et comporte des bilbliotèque open sources de SLAM. Nous plaçons cette partie de projet dans un second plan, car c'est une partie très informatique (le cours est de base axé sur la création d'un projet arduino), et ROS est un outils très complexe qui nous ai pour l'instant inconnue.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le but ultime de ce projet serait que le robot se déplace de manière autonome dans la pièce. Cette technique appelé SLAM (Simultaneous Location and Mapping) est très complexe, et c'est pourquoi nous utiliserions le l'outil ROS (qui est une surcouche de Linux permettant lacréation de logiciel pour la robotique) qui est très utilisé dans le domaine des robots et comporte des bilbliotèque open sources de SLAM. Nous plaçons cette partie de projet dans un second plan, car c'est une partie très informatique (le cours est axé sur la création d'un projet elctronique avec arduino), et ROS est un outils très complexe qui nous ai pour l'instant inconnue.  
 
 # Mise en place du schéma
 
