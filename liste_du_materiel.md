@@ -1,4 +1,4 @@
-# Liste_du_matériel
+# Liste du matériel
 
 Voici la liste du materiel que nous utilisons/utiliserons pour la réalisation de ce projet.
 
