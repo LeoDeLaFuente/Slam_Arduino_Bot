@@ -12,8 +12,10 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le but ultime de ce projet serait que le robot se déplace de manière autonome dans la pièce. Cette technique appelé SLAM (Simultaneous Location and Mapping) est très complexe, et c'est pourquoi nous utiliserions le l'outil ROS (qui est une surcouche de Linux permettant lacréation de logiciel pour la robotique) qui est très utilisé dans le domaine des robots et comporte des bilbliotèque open sources de SLAM. Nous plaçons cette partie de projet dans un second plan, car c'est une partie très informatique (le cours est axé sur la création d'un projet elctronique avec arduino), et ROS est un outils très complexe qui nous ai pour l'instant inconnue.  
 
-# Mise en place du schéma
+# Mise en place du schéma et du materiel
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Suite à la séance du 21 Décembre 2017 nous avons créé un schéma récapitulatif du projet.
 
 ![Schéma projet](/Images/Schéma.jpg)
+
+[Ainsi qu'une liste du materiel.](/liste du materiel.md)
