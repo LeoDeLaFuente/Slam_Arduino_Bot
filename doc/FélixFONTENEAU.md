@@ -9,12 +9,16 @@ Tâches effectuées :
   ![Brouillon](/Images/Schéma_brouillon1.jpg)  
   ![Brouillon2](/Images/Schéma_brouillon2.jpg)  
   ![Brouillon3](/Images/Schéma_brouillon3.jpg)  
-  + Mise en place et déveleppement du GitHub.
-***
-- **Travail personnel en tre les séances**  
+  + Mise en place et déveleppement du GitHub.  
+  
+***  
+
+- **Travail personnel entre les séances**  
 
 Tâches effectuées :
   + Recherches et dévellopements des idées à la réalisation
-  + Liste du matériel : [liste](/liste_du_materiel.md)
+  + Liste du matériel : [liste](/liste_du_materiel.md)  
+  
+  ***  
 
 - **Séance du 8 Janvier 2018**
