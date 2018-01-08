@@ -3,16 +3,20 @@
   + 
 ***
 - <h3>Semaine 3 </h2>  
-  + 
-  +
+  + Reussir a cabler le laser
+  + Installation de processing
   +
 ***
 - <h3> Semaine 4 </h2>  
-
+  + Premières mesures 
+  + Stockages des données
+  + 
 
 ***
 - <h3> Semaine 5 </h2>  
-
+  +
+  +
+  +
 
 ***
 - <h3> Semaine 6 </h2>  
