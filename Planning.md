@@ -1,4 +1,4 @@
-- <h3> Semaine 2 </h2>  
+- <h3> Semaine 2 </h2>
  *
  *
 - <h3> Semaine 3 </h2>  
