@@ -10,7 +10,8 @@ Ce projet réalisé dans le cadre de notre cours d'arduino en PEIP2 de l'école 
  - ##### Mise en place du projet
  - ##### Commencement de la mise en place de la liste du materiel
  - ##### Création du schéma du projet
- ![Schéma projet](documentation/Images/Schéma.jpg)
+ ![Schéma projet](/documentation/Images/Schéma.jpg)
+
  
  ## Travail personnel du 22 Décembre
  
