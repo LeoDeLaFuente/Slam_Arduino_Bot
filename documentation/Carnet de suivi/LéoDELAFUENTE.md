@@ -16,4 +16,4 @@ Ce projet réalisé dans le cadre de notre cours d'arduino en PEIP2 de l'école 
  
   - ##### Commencement du [dessin 3d du robot](/robot) sous Autovad Inventor 
   La Base du robot sera constitué de deux planches en bois découpé à la découpe laser et reliés par quatre entretoises (en PVC ou métal). Un servomoteur sera placé sur la planche du dessus pour ensuite placer le télémetre laser dessus. Nous n'avons pas encore reçus les roues codeuses, et je n ai pas trouvé d'image 3D de celles-ci pour l'instant.
-![Robot en 3D](/Images/robot_1.png)
+![Robot en 3D](documentation/Images/robot_1.png)
