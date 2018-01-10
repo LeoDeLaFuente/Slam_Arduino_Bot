@@ -16,10 +16,10 @@ Tâches effectuées :
   
 ***  
 
-## Travail personnel entre les séances**  
+## Travail personnel entre les séances 
 
 Tâches effectuées :
-  + Recherches et dévellopements des idées à la réalisation .  
+  + Recherches et dévellopements des idées à la réalisation.  
   
   + Liste du matériel : [liste](/documentation/liste_du_materiel.md)
  
@@ -28,9 +28,10 @@ Tâches effectuées :
 ## Séance du 8 Janvier 2018
 
 Tâches effectuées :
-  + Réception et début d'utilisation du module laser.  
+  + Réception et début d'utilisation du module laser. Débuts concluants pour les premiers tests avec le laser. En effet il marche parfaitement dans les conditions dont le souhaitons. Voir : [code basique laser automatique]( /code/arduino files/test_laser_san_delay/test_laser_san_delay.ino)
+  <img src="/documentation/Images/soudure_laser.jpg" alt="photo soudure" height="300"/>
   
-  + 
+  + Création de la présentation du module laser : [ici](/Construction_Projet/Laser.md)
   
   ***  
 ## Travail personnel entre les séances
