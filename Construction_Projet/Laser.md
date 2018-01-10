@@ -10,6 +10,7 @@ Il faut faire attention à la réflexion du laser sur les surfaces réfléchissa
 Cela peut arriver sur des vitres ou miroirs, mais aussi sur des surfaces de type carlage, ou plastique lisse non opaque avec un angle de réflexion très grand.
 
 </li>
+<hr/>
 <li><h4>2-branchements</h4>
 Les branchements s'effectuent de la manière suivante :
 <img src="/Slam_Arduino_Bot/documentation/Images/cablage_laser.jpg" alt="Image cablage" height="500"/>
