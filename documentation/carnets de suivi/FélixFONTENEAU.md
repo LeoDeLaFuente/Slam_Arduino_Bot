@@ -1,7 +1,7 @@
 # Cahier de suivi du projet de Félix Fonteneau
 
 
-- **Séance du 20 Décembre 2017**
+## Séance du 20 Décembre 2017
 
 Tâches effectuées :
 
@@ -16,7 +16,7 @@ Tâches effectuées :
   
 ***  
 
-- **Travail personnel entre les séances**  
+## Travail personnel entre les séances**  
 
 Tâches effectuées :
   + Recherches et dévellopements des idées à la réalisation .  
@@ -25,7 +25,7 @@ Tâches effectuées :
  
   ***  
 
-- **Séance du 8 Janvier 2018** 
+## Séance du 8 Janvier 2018
 
 Tâches effectuées :
   + Réception et début d'utilisation du module laser.  
@@ -33,7 +33,7 @@ Tâches effectuées :
   + 
   
   ***  
-- **Travail personnel entre les séances**  
+## Travail personnel entre les séances
 
 Tâches effectuées :
   + 
@@ -42,4 +42,4 @@ Tâches effectuées :
   
   ***  
 
-- **Séance du 15 Janvier 2018**
+## Séance du 15 Janvier 2018
