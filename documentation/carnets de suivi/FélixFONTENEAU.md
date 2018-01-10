@@ -25,7 +25,8 @@ Tâches effectuées :
  
   ***  
 
-- **Séance du 8 Janvier 2018**  
+- **Séance du 8 Janvier 2018** 
+
 Tâches effectuées :
   + Réception et début d'utilisation du module laser.  
   
@@ -36,6 +37,7 @@ Tâches effectuées :
 
 Tâches effectuées :
   + 
+  
   + 
   
   ***  
