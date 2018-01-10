@@ -12,9 +12,9 @@ Il se presente sous la forme d'un petit boitier de taille 45*25*12mm. La mesure 
 <br/>
 <li><h3>2-branchements</h3>
    Les branchements s'effectuent de la manière suivante :
-<img src="/documentation/Images/cablage_laser.jpg" alt="Image cablage" height="500"/>
-On effectue donc une liason serie TX-RX avec l'arduino.
-Pour l'alimentation, on branche la masse à la masse commune du Robot, et le positif à 2 piles de 1,5 V.
+<img src="/documentation/Images/cablage_laser.jpg" alt="Image cablage" height="500"/><br/>
+On effectue donc une liason serie TX-RX avec l'arduino.<br/>
+Pour l'alimentation, on branche la masse à la masse commune du Robot, et le positif à 2 piles de 1,5 V.<br/>
 <img src="/documentation/Images/pile.jpg" alt="piles" height="500"/>
 
 
