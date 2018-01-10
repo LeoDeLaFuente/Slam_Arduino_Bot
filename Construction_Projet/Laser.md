@@ -21,7 +21,7 @@ On effectue donc une liason serie TX-RX avec l'arduino.<br/>
 Pour l'alimentation, on branche la masse à la masse commune du Robot, et le positif à 2 piles de 1,5 V.<br/>
 <img src="/documentation/Images/pile.jpg" alt="piles" height="500"/><br/>
 <hr/><br/></li>
-<li><h3>Utilisation</h3>
+<li><h3>3-Utilisation</h3>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Le laser s'utilise simplement en envoyant un caractere via liaison serie. 
 On envoi le charactère 'D' pour une mesure lente et 'F' pour une mesure rapide.<br/>
