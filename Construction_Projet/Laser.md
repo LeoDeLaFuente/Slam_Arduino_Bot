@@ -12,7 +12,7 @@ Il se presente sous la forme d'un petit boitier de taille 45*25*12mm. La mesure 
 <br/>
 <li><h3>2-branchements</h3>
    Les branchements s'effectuent de la manière suivante :
-<img src="/Slam_Arduino_Bot/documentation/Images/cablage_laser.jpg" alt="Image cablage" height="500"/>
+<img src="/documentation/Images/cablage_laser.jpg" alt="Image cablage" height="500"/>
 
 
 
