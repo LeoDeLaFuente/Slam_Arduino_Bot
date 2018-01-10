@@ -8,7 +8,7 @@ Tâches effectuées :
   + Recherches bibliographique des différentes options permettant d'aboutir à réaliser le traitement de données sur l'ordinateur (processing/ROS).
 
   + Décomposition des différents besoins matériels et informatiques nécessaires au projet. Schématisation de l'ensemble des modules et de leur utilités au brouillon : 
-  ![Brouillon](/documentation/Images/Schéma_brouillon1.jpg)  
+  <img src="/documentation/Images/Schéma_brouillon1.jpg" alt="brouillon" height="100">  
   ![Brouillon2](/documentation/Images/Schéma_brouillon2.jpg)  
   ![Brouillon3](/documentation/Images/Schéma_brouillon3.jpg)
   
