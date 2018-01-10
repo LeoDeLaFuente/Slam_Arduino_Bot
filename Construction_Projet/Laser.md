@@ -1,5 +1,4 @@
 <h1> Explication du module laser </h1>
-<hr/>
 Cette page est consacrée a l'utilisation du laser.  
 <ul>
 <li><h4>1-Présentation</h4>
