@@ -19,10 +19,10 @@ Tâches effectuées :
 - **Travail personnel entre les séances**  
 
 Tâches effectuées :
-  + Recherches et dévellopements des idées à la réalisation  
+  + Recherches et dévellopements des idées à la réalisation .  
   
-  + Liste du matériel : [liste](/documentation/liste_du_materiel.md)  
-  
+  + Liste du matériel : [liste](/documentation/liste_du_materiel.md)
+ 
   ***  
 
 - **Séance du 8 Janvier 2018**  
