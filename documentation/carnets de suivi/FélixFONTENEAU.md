@@ -8,9 +8,9 @@ Tâches effectuées :
   + Recherches bibliographique des différentes options permettant d'aboutir à réaliser le traitement de données sur l'ordinateur (processing/ROS).
 
   + Décomposition des différents besoins matériels et informatiques nécessaires au projet. Schématisation de l'ensemble des modules et de leur utilités au brouillon : 
-  <img src="/documentation/Images/Schéma_brouillon1.jpg" alt="brouillon" height="100">  
-  ![Brouillon2](/documentation/Images/Schéma_brouillon2.jpg)  
-  ![Brouillon3](/documentation/Images/Schéma_brouillon3.jpg)
+  <img src="/documentation/Images/Schéma_brouillon1.jpg" alt="brouillon" height="200">  
+  <img src="/documentation/Images/Schéma_brouillon2.jpg" alt="brouillon2" height="200">
+  <img src="/documentation/Images/Schéma_brouillon3.jpg" alt="brouillon3" height="200">
   
   + Mise en place et déveleppement du GitHub.  
   
