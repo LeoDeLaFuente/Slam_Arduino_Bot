@@ -29,8 +29,7 @@ Voici la liste du materiel que nous utilisons/utiliserons pour la réalisation d
   + servo moteur  
   de type ...   
   
-  + laser de mesure de distance  
-  de type ...  
+  + [laser de mesure de distance](/Construction_Projet/Laser.md)   
    
   + compas permettant une meilleure précision de rotation que les roues codeuses ???   
 
