@@ -10,7 +10,7 @@ Cela peut arriver sur des vitres ou miroirs, mais aussi sur des surfaces de type
 
 </li>
 <hr/>
-<hr/>
+<br/>
 <li><h3>2-branchements</h3>
 Les branchements s'effectuent de la manière suivante :
 <img src="/Slam_Arduino_Bot/documentation/Images/cablage_laser.jpg" alt="Image cablage" height="500"/>
