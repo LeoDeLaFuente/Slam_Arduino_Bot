@@ -25,6 +25,6 @@ Pour l'alimentation, on branche la masse à la masse commune du Robot, et le pos
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Le laser s'utilise simplement en envoyant un caractere via liaison serie. 
 On envoi le charactère 'D' pour une mesure lente et 'F' pour une mesure rapide.<br/>
-La mesure rapide s'effectue à une vitesse d'un peu plus de 0,3 sec (0,31 s) car 0,3 précisement provoque une erreur lors du transfer des données.
+La mesure rapide s'effectue à une vitesse d'un peu plus de 0,3 sec (0,31 s) car 0,3 précisement provoque une erreur lors du transfert des données.
 </li></ul>
 
