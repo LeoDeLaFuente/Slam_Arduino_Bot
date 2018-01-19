@@ -59,7 +59,7 @@ analogWrite(speedPinA, 255);//Sets speed variable via PWM
 digitalWrite(dir1PinA, LOW);
 digitalWrite(dir2PinA, HIGH);
 Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
-Serial.println("case 1"); // Creates a blank line printed on the serial monitor
+Serial.println("    "); // Creates a blank line printed on the serial monitor
 break;
 
 case '2': // Motor 1 Stop (Freespin)
@@ -67,7 +67,7 @@ analogWrite(speedPinA, 0);
 digitalWrite(dir1PinA, LOW);
 digitalWrite(dir2PinA, HIGH);
 Serial.println("Motor 1 Stop");
-Serial.println("case 2");
+Serial.println("    ");
 break;
 
 case '3': // Motor 1 Reverse
@@ -75,7 +75,7 @@ analogWrite(speedPinA, 255);
 digitalWrite(dir1PinA, HIGH);
 digitalWrite(dir2PinA, LOW);
 Serial.println("Motor 1 Reverse");
-Serial.println("case 3");
+Serial.println("    ");
 break;
 
 //______________Motor 2______________
@@ -85,7 +85,7 @@ analogWrite(speedPinB, 255);
 digitalWrite(dir1PinB, LOW);
 digitalWrite(dir2PinB, HIGH);
 Serial.println("Motor 2 Forward");
-Serial.println("case 4 ");
+Serial.println("    ");
 break;
 
 case '5': // Motor 1 Stop (Freespin)
@@ -93,7 +93,7 @@ analogWrite(speedPinB, 0);
 digitalWrite(dir1PinB, LOW);
 digitalWrite(dir2PinB, HIGH);
 Serial.println("Motor 2 Stop");
-Serial.println("case 5");
+Serial.println("    ");
 break;
 
 case '6': // Motor 2 Reverse
@@ -101,7 +101,7 @@ analogWrite(speedPinB, 255);
 digitalWrite(dir1PinB, HIGH);
 digitalWrite(dir2PinB, LOW);
 Serial.println("Motor 2 Reverse");
-Serial.println("case 6");
+Serial.println("    ");
 break;
 
 default:
