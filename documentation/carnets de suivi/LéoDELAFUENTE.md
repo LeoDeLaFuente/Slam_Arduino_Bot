@@ -33,7 +33,7 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 
 - ##### Reception des moteurs à roues codeuses
  AYnat reçu nos moteurs, je me suis penché sur leur fontionnement à l'aide d'un pont en H (L298N). Ce dernier permet de controler deux moteurs. 
- <img src="/documentation/Images/pont_en_h.JPG" alt="pont en h">
+ <img src="/documentation/Images/pont_en_h.JPG" alt="pont en h" height= 100px>
  ![moteur à roues codeuses](/documentation/Images/roue_codeuse_1.JPG)
  ![moteur à roues codeuses](/documentation/Images/roue_codeuse_2.JPG)
  
