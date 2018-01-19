@@ -33,9 +33,9 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 
 - ##### Reception des moteurs à roues codeuses
  AYnat reçu nos moteurs, je me suis penché sur leur fontionnement à l'aide d'un pont en H (L298N). Ce dernier permet de controler deux moteurs. 
- <img src="/documentation/Images/pont_en_h.JPG" alt="pont en h" height= 500px>
- ![moteur à roues codeuses](/documentation/Images/roue_codeuse_1.JPG)
- ![moteur à roues codeuses](/documentation/Images/roue_codeuse_2.JPG)
+ <img src="/documentation/Images/pont_en_h.JPG" alt="pont en h" height= 350px>
+ <img src="/documentation/Images/roue_codeuse_1.JPG" alt="moteur à roues codeuses" height= 350px>
+  <img src="/documentation/Images/roue_codeuse_2.JPG" alt="moteur à roues codeuses" height= 350px>
  
  Nous appliquons une tension de 12V grâce à un générateur de tension pour nos tests. La mise en place du fonctionnement des moteurs à pris beaucoup de temps car j'avais utilisé un fil défaillant. Après avoir trouvé l'erreur, l'exécuion du programme permet defaire fonctionner les moteurs dans le sens voulu et de les arréter grâce aux touches du clavier. Nous avons récupéré le code présent sur [ce site](http://www.instructables.com/id/Arduino-Modules-L298N-Dual-H-Bridge-Motor-Controll/), ainsi que suivi les instructions. Ce programme m'as ainsi permit de comprendre comment fonctionne les moteurs pour pouvoir dévelloper le code qui va servir à diriger le robot.
  Il faut maintenant récupérer le signal des roues codeuses pour connaitre précisément la rotation des moteurs.
