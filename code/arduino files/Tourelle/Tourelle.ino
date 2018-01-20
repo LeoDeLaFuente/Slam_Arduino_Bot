@@ -21,13 +21,6 @@ void loop(){
  /*dans ce loop, on va effectuer la demande de mesure avec le char F
  puis attendre minimum 0,310 secondes, et récuper les char avec le while*/
  if(millis()-chrono>1010){
-  myservo.write(i);
-  Serial.print(i);
-  
-  if(i>=120){
-    i=20;
-   }else{
-      i=i+5;}
     if(Laser.available() && !passe){
       while( c != '\n'){
         c=Laser.read();
@@ -36,6 +29,14 @@ void loop(){
       c = ' ';
       passe = true;
     }
+
+  myservo.write(i);
+  Serial.print(i+";");
+  if(i>=120){
+    i=20;
+   }else{
+     i=i+5;
+   }
     
     if(passe){
       Laser.print('F');
