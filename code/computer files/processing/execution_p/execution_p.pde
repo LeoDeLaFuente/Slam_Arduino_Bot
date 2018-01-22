@@ -1,36 +1,51 @@
 import processing.serial.*; // importe la librairie série processing
 Serial  myPort; // Création objet désignant le port série
- 
-void setup()
-{
-  background(0); // fond noir
-  size(200,200); //make our canvas 200 x 200 pixels big
-  String portName = Serial.list()[0]; //change the 0 to a 1 or 2 etc. to match your port
-  myPort = new Serial(this, portName, 9600); //myPort = new Serial(this, "/dev/ttyACM0", 9600);
-  frameRate(10);
-  
+float[] mesures;
+float[] position = {0.0 , 0.0};
+int resolution = 5;
+
+
+
+void setup(){
+  mesures = new float[2];
+  background(0); 
+  size(1200,700); 
+  String portName = Serial.list()[3]; 
+  println(portName);
+  myPort = new Serial(this, portName, 19200); //myPort = new Serial(this, "/dev/ttyACM0", 9600);
+  frameRate(10);  
 }
  
-void  draw()
-{ // fonction exécutée en boucle
-   
-   
-} // fin de la fonction draw()
+void  draw(){
+  println(mesures[0]);
+  println(mesures[1]);
+  pointage();
+} 
+
+
+void pointage(){
+  if(mesures[0] != 0 || mesures[1] != 0){
+    float x;
+    float y;   
+    x = width/2 + position[0] + cos(mesures[0]);
+    y = height/2 + position[1] + sin(mesures[0]);
+    fill(255);
+    rect(x,y,resolution, resolution);
+    mesures[0] = 0;  
+    mesures[1] = 0;
+  }
+}
  
 //------------- Fonction de gestion des évènements série ----
-void serialEvent (Serial myPort)
-{ // fonction appelée lors de la survenue d'un évènement série
-  // ******** Gestion de la valeur reçue sur le port série : **********
-  // saut de ligne en marque de fin
+void serialEvent (Serial myPort){ 
   String inString = myPort.readStringUntil('\n'); // chaine stockant la chaîne reçue sur le port Série
-  if (inString != null)
-  { // si la chaine recue n'est pas vide
-    int[] point = new int [512];
-    for ( int i=0; i< 512;i++){
-      point[i]=int(inString);
-      if(i==511){
-        i=0;
-      }
-    }
-  } // fin condition chaine recue pas vide
-} // fin de la fonction de gestion des évènements Série
+  if (inString != null){ // si la chaine recue n'est pas vide
+    traitement(inString);
+  }
+} 
+
+void traitement(String inString){
+  String[] split = split(inString,";");
+  mesures[0] = float(split[0])/180*PI;
+  mesures[1] = float(split[1].substring(3,8).replace(',','.'))*10;
+}
