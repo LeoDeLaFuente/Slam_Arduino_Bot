@@ -37,10 +37,18 @@ Tâches effectuées :
 ## Travail personnel entre les séances
 
 Tâches effectuées :
-  + 
+  + Optimisation du code du laser
   
-  + 
+  + Amélioration de la vitesse des mesures
   
   ***  
 
-## Séance du 15 Janvier 2018
+## Séance du 19 Janvier 2018  
+
+Tâches effectuées :
+  + Réception des moteurs à roues codeuses (voir le carnet de léo)
+  
+  + Création de la première tourelle.   
+  <img src="/documentation/Images/Tourelle_premiere_version.JPG" alt="image tourelle" height="300"/>
+  
+  + Harmonisation du code entre servo moteur et laser [code laser](/code/arduino files/Tourelle/Tourelle.ino )

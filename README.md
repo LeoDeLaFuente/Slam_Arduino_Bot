@@ -16,6 +16,6 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Suite à la séance du 21 Décembre 2017 nous avons créé un schéma récapitulatif du projet.
 
-![Schéma projet](/documentation/Images/Schéma.jpg)
+![Schéma projet](/documentation/Images/Schéma_wifi_lora.jpg)
 
 [Ainsi qu'une liste du materiel](/documentation/liste_du_materiel.md)
