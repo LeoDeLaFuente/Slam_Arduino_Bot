@@ -48,6 +48,7 @@ Tâches effectuées :
 Tâches effectuées :
   + Réception des moteurs à roues codeuses (voir le carnet de léo)
   
-  + Création de la première tourelle. <img src="/documentation/Images/Tourelle_premiere_version.JPG" alt="image tourelle" height="300"/>
+  + Création de la première tourelle.   
+  <img src="/documentation/Images/Tourelle_premiere_version.JPG" alt="image tourelle" height="300"/>
   
   + Harmonisation du code entre servo moteur et laser [code laser](/code/arduino files/Tourelle/Tourelle.ino )
