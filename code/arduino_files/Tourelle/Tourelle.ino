@@ -11,7 +11,7 @@ int i = 20;
 
 void setup() {
   Serial.begin(19200);
-  myservo.attach(5);  // attaches the servo on pin 11 to the servo object
+  myservo.attach(5);  // attaches the servo on pin 5 to the servo object
   Laser.begin(19200);
   delay(3000);
   Serial.println("Arduino 1 : je suis pret a recevoir/emmettre");
