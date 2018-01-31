@@ -6,4 +6,5 @@
  sur l'explication des techniques de S.L.A.M afin de traiter les données, d'en déduire son odométrie.
  
 + https://articulo.mercadolibre.com.ar/MLA-621770683-motorreductor-con-encoder-namiki-22cl-3501pg-_JM permet de savoir comment brancher nos roues codeuses
++ http://www.robot-maker.com/shop/blog/33_Asservir-moteurs-courant-continu-PID.html asservissement roue codeuse
 
