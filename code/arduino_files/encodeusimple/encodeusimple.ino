@@ -19,6 +19,6 @@ void loop(){
  
 /* Interruption sur tick de la codeuse */
 void compteur(){
-    tick_codeuse++;  // On incrémente le nombre de tick de la codeuse
+    tick_codeuse=tick_codeuse+1;  // On incrémente le nombre de tick de la codeuse
     Serial.println(tick_codeuse);
 }

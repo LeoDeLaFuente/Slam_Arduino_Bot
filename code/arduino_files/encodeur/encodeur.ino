@@ -16,26 +16,10 @@ volatile byte laststate =0;  // etat précédent de l'encodeur
 
 
 // Contrôle PWM simple
-#define A 5 // Contrôle vitesse moteur 1
-#define B 6 //controle direction moteur 1
+//#define A 5 // Contrôle vitesse moteur 1
+//#define B 6 //controle direction moteur 1
 
-void stop() //Stop
-{
-digitalWrite(A,LOW);
-digitalWrite(B,LOW);
-}
 
-void advance(char a) // En avant
-{
-analogWrite (A,a); // Contrôle de vitesse en PWM
-digitalWrite(B,HIGH);
-}
-
-void back_off (char a) // En arrière
-{
-analogWrite (A,a);
-digitalWrite(B,LOW);
-}
 
 void setup()
 {
@@ -43,8 +27,8 @@ void setup()
  pinMode(ENCODEURA, INPUT_PULLUP);
  pinMode(ENCODEURB, INPUT_PULLUP);
  
-pinMode(A, OUTPUT);
-pinMode(B, OUTPUT);
+//pinMode(A, OUTPUT);
+//pinMode(B, OUTPUT);
  
 attachInterrupt(0,counter, CHANGE); // on crée l'interruption sur changement sur la pin 2 => interruption 0, la routine counter va se faire toute seule sans l'appeler à chaque changement d'état sur le pin 2
 
@@ -57,27 +41,6 @@ Serial.println("Execution du controle par clavier");
 
 void loop()
 {
-if(Serial.available()){
-char val = Serial.read(); //récupération des caractères sur le
-if(val != -1)             //port série
-{
-switch(val)
-{
-case 'z':// En avant si touche "z"
-advance (255-255); // en avant vitesse max
-                  // le driver fonctionne à l'état bas en marche avant
-break;
-case 's':// En arrière si touche "s"
-back_off (255); // en arrière vitesse max
-              // le driver fonctionne à l'état haut en marche arrière
-break;
-case 'x': // arrêt si touche "x"
-stop();
-break;
-}
-}
-else stop();
-}
 
 Serial.println("speed");             
 Serial.println(speed); 
