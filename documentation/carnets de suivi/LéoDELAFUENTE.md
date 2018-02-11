@@ -49,3 +49,8 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  
  - ##### Soudure des cables des roues codeuses.
  J ai effectué des soudure sur les fils des roues codeuse pour permettre le branchement sur notre plaque de test et relié ainsi le codage à l'arduino.
+ 
+ ## Séance du 6 Fervier
+ 
+ - #### Fonctionnement des roues codeuse.
+  J ai fait lusieurs recherches pour trouver comment cabler la roue codeuse, et est trouvé un schéma qui n'était pas bon est qui a grillé les roues codeuse ( celle ci fontionne avec des leds, et je n'avait pas mis de résistances, sachant que le circuit de la roue codeuse n'en contient pas). J ai pu récupéré une roue codeuse avec un circuit de protection itégré qui fonctionne avec l'arduino. Il faut maintenant écrire le code permettant d'utiliser cette dernière, et acheter une seconde roue codeuse.
