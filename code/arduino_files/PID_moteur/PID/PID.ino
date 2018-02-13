@@ -12,6 +12,7 @@
 #define ENCODEURB 4
 #define A 5       // Contrôle vitesse moteur 1
 #define B 6       //controle direction moteur 1
+#define C 7 //controle direction moteur 1
 
 
 double Setpoint, Input, Output;
@@ -66,6 +67,9 @@ pinMode(B, OUTPUT);
   //active le PID
   PID.SetMode(AUTOMATIC);
   PID.SetOutputLimits(-255, 255);
+
+  digitalWrite(B,HIGH);
+digitalWrite(C,LOW);
 }
 
 void loop(){
@@ -118,13 +122,14 @@ if(output<0){
 void advance(int a) // En avant
 {
 analogWrite (A,a); // Contrôle de vitesse en PWM
-digitalWrite(B,HIGH);
+
 }
 
 void back_off (int a) // En arrière
 {
 analogWrite (A,a);
-digitalWrite(B,LOW);
+
+
 }
 
 // Encoder counter 0
