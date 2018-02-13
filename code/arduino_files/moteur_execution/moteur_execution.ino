@@ -88,7 +88,7 @@ Serial.println("    ");
 break;
 
 case '3': // Motor 1 Reverse
-analogWrite(speedPinA, 255);
+analogWrite(speedPinA, speed);
 digitalWrite(dir1PinA, HIGH);
 digitalWrite(dir2PinA, LOW);
 Serial.println("Motor 1 Reverse");
@@ -98,7 +98,7 @@ break;
 //______________Motor 2______________
 
 case '4': // Motor 2 Forward
-analogWrite(speedPinB, 255);
+analogWrite(speedPinB, speed);
 digitalWrite(dir1PinB, LOW);
 digitalWrite(dir2PinB, HIGH);
 Serial.println("Motor 2 Forward");
@@ -114,7 +114,7 @@ Serial.println("    ");
 break;
 
 case '6': // Motor 2 Reverse
-analogWrite(speedPinB, 255);
+analogWrite(speedPinB, speed);
 digitalWrite(dir1PinB, HIGH);
 digitalWrite(dir2PinB, LOW);
 Serial.println("Motor 2 Reverse");
