@@ -53,4 +53,16 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  ## Séance du 6 Fervier
  
  - #### Fonctionnement des roues codeuse.
-  J ai fait lusieurs recherches pour trouver comment cabler la roue codeuse, et est trouvé un schéma qui n'était pas bon est qui a grillé les roues codeuse ( celle ci fontionne avec des leds, et je n'avait pas mis de résistances, sachant que le circuit de la roue codeuse n'en contient pas). J ai pu récupéré une roue codeuse avec un circuit de protection itégré qui fonctionne avec l'arduino. Il faut maintenant écrire le code permettant d'utiliser cette dernière, et acheter une seconde roue codeuse.
+  J ai fait plusieurs recherches pour trouver comment cabler la roue codeuse, et est trouvé un schéma qui n'était pas bon est qui a grillé les roues codeuse ( celle ci fontionne avec des leds, et je n'avait pas mis de résistances, sachant que le circuit de la roue codeuse n'en contient pas). J ai pu récupéré une roue codeuse avec un circuit de protection intégré qui fonctionne avec l'arduino. Il faut maintenant écrire le code permettant d'utiliser cette dernière, et acheter une seconde roue codeuse.
+  
+## Travail personnel du 9 Février
+
+- #### Codage roue codeuse.
+  J'ai réalisé un code ("moteur_execution") permettant defaire tourner une roue sur une longueur demandé en cm. Le programme prend donc une longueur l en cm, la convertit en "tour de roue", puis fais tourner la roue en comptant le nombre de tour graçeà la roue codeuse.
+
+
+## Séance du 21 Février
+- #### Fabrication du premier robot en carton.
+ J'ai fabriqué le premier essai de robot en carton. Celui-ci va me permettre de faires premiers essai avec les roues codeuse et d'améliorer le fonctionnement de mon code.
+![Premier robot en carton](/documentation/Images/premier_robot_carton.jpg)
+ 
