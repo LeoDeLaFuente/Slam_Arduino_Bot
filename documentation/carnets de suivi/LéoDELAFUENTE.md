@@ -64,5 +64,5 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 ## Séance du 21 Février
 - #### Fabrication du premier robot en carton.
  J'ai fabriqué le premier essai de robot en carton. Celui-ci va me permettre de faires premiers essai avec les roues codeuse et d'améliorer le fonctionnement de mon code.
-![Premier robot en carton](/documentation/Images/premier_robot_carton.jpg)
+![Premier robot en carton](/documentation/Images/robot_carton_1.jpg)
  
