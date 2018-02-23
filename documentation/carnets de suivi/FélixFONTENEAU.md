@@ -53,11 +53,15 @@ Tâches effectuées :
   
   + Harmonisation du code entre servo moteur et laser [code laser](/code/arduino_files/Tourelle/Tourelle.ino )
   
-  
+    ***  
+
 ## Séance du 22 Janvier
  
  - ##### Pésentation de notre projet devant nos deux professeur et notre classe.
  [La présentation est visible ici](https://github.com/LeoDeLaFuente/Slam_Arduino_Bot/blob/master/documentation/Slam_arduino_bot_presentation.pdf)
+ 
+   ***  
+
  
 ## Travail personel durant la semaine de ski
 
@@ -70,4 +74,49 @@ Tâches effectuées :
   [code processing](code/computer files/processing/execution_p/execution_p.pde)
   Cela permet de nous donner une base afin de pouvoir commencer la partie programmation en parallèle de la partie électronique.  
   
-  + 
+  + Le code  et l'interface sont plutôt ajustable pour convenir a des quelconques changements de projet.
+  
+    ***  
+
+  
+## Séance du 07 Février
+ 
+ - PROBLEME   Face au trajet durant la semaine de ski, le laser a du faire un faux contact avec les piles probablement.
+ 
+ - Tentative de ressoudage des soudures en vain.
+ 
+ - Comparaison de l'impédance totale du laser avec l'impédence d'un laser fonctionel de même marque.  
+ On remarque que les impédences sont totalement différentes (laser test de l'ordre de la dizaine d'Ohms, laser fonctionel de l'ordre du méga Ohms)
+ 
+ - Solution : pret d'un nouveau laser pour continuer le projet.
+ 
+   ***  
+
+ 
+ ## Travail personel entre les séances  
+ 
+  - Remise en état de la tourelle, mais problèmes de précision ainsi que de montage concernant cette dernière.
+ 
+   ***  
+
+## Séance du 23 Février
+
+  - Changement de voie pour les mesures télémétriques du robot. 
+  
+  - En effet la tourelle munie d'un servo moteur permet d'effectuer environs 3 mesures par secondes avec une précision à revoir.
+  
+  - Mr P. Masson a commandé un Lidar pour tester cette posibilité.  
+  Le lidar permetrai des mesures en "continu" et sur un axe en rotation continu. Cela augmenterai la rapidité de cartographie de notre systeme.
+  
+  - Les avantages :
+    + Beaucoup plus de mesures effectuées.
+    + Une meilleure précision grace à un nombre plus conséquent de mesures.
+    + Lidar en rotation sur un axe. Cette rotation s'effectuera avec un moteur à rotation continu et une roue codeuse (pour savoir la vitesse angulaire du Lidar).
+  
+  - Les désavantages sont :
+    + Une moins bonne précision et capacité de mesure des distances (12 m pour le Lidar, 40m pour le laser actuel). 
+    + Mise en place d'une tourelle à rotation.
+    + Transfert difficile pour les câbles (gestion de l'entortillement des câbles du lidar sur la tourelle).
+  
+  - La solution pour cette dernière difficultée est de peut être d'utiliser un slip-ring pour faire passer les cables.
+
