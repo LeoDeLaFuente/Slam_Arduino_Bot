@@ -49,3 +49,26 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  
  - ##### Soudure des cables des roues codeuses.
  J ai effectué des soudure sur les fils des roues codeuse pour permettre le branchement sur notre plaque de test et relié ainsi le codage à l'arduino.
+ 
+ ## Séance du 6 Fervier
+ 
+ - #### Fonctionnement des roues codeuse.
+  J ai fait plusieurs recherches pour trouver comment cabler la roue codeuse, et est trouvé un schéma qui n'était pas bon est qui a grillé les roues codeuse ( celle ci fontionne avec des leds, et je n'avait pas mis de résistances, sachant que le circuit de la roue codeuse n'en contient pas). J ai pu récupéré une roue codeuse avec un circuit de protection intégré qui fonctionne avec l'arduino. Il faut maintenant écrire le code permettant d'utiliser cette dernière, et acheter une seconde roue codeuse.
+  
+## Travail personnel du 9 Février
+
+- #### Codage roue codeuse.
+  J'ai réalisé un code ("moteur_execution") permettant defaire tourner une roue sur une longueur demandé en cm. Le programme prend donc une longueur l en cm, la convertit en "tour de roue", puis fais tourner la roue en comptant le nombre de tour graçeà la roue codeuse.
+
+
+## Séance du 21 Février
+- #### Fabrication du premier robot en carton.
+ J'ai fabriqué le premier essai de robot en carton. Celui-ci va me permettre de faires premiers essai avec les roues codeuse et d'améliorer le fonctionnement de mon code.
+![Premier robot en carton](/documentation/Images/robot_carton_1.jpg)  
+
+
+## Travail personnel du 22 Février
+ - #### Mise en route du robot
+    Après avoir récupéré une roue codeuse sur un robot d'un autre groupe qui ne s'en servait pas, j ai commencé à faire les essais pour faire tourner les roues du robot en même temps et commencer à programmer les mouvements élémentaires du robot. Je me suis aperçu que mes moteurs tournaient lentement, et pense que celà est dû au fait que j'alimente le pont en H et l'arduino avec la même pile de 9v qui n'est pas assez puissante.
+
+ 

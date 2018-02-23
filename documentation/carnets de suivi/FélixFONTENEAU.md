@@ -52,3 +52,22 @@ Tâches effectuées :
   <img src="/documentation/Images/Tourelle_premiere_version.JPG" alt="image tourelle" height="300"/>
   
   + Harmonisation du code entre servo moteur et laser [code laser](/code/arduino_files/Tourelle/Tourelle.ino )
+  
+  
+## Séance du 22 Janvier
+ 
+ - ##### Pésentation de notre projet devant nos deux professeur et notre classe.
+ [La présentation est visible ici](https://github.com/LeoDeLaFuente/Slam_Arduino_Bot/blob/master/documentation/Slam_arduino_bot_presentation.pdf)
+ 
+## Travail personel durant la semaine de ski
+
+Tâches effectuées : 
+  + Création d'une simulation du laser pour débuter la programation, [code processing](code/computer files/processing/execution_p/execution_p.pde) 
+  
+  + Début du traitement des données sur processing. 
+  
+  + Création de l'interface et de l'affichage de la carte en fonction des données reçues  
+  [code processing](code/computer files/processing/execution_p/execution_p.pde)
+  Cela permet de nous donner une base afin de pouvoir commencer la partie programmation en parallèle de la partie électronique.  
+  
+  + 
