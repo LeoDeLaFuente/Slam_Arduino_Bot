@@ -56,6 +56,9 @@ void pointage(){
 void fleche(float px, float py,float orientation){
   stroke(#FF1500);
   line(px,py,px+15*cos(orientation),py+15*sin(orientation));
+  line(px+15*cos(orientation),py+15*sin(orientation),px+15*cos(orientation)-5,py+15*sin(orientation)-5);
+  line(px+15*cos(orientation),py+15*sin(orientation),px+15*cos(orientation)-5,py+15*sin(orientation)+5);
+
 }
 
  
