@@ -8,7 +8,7 @@ char c;
 void setup() {
   Serial.begin(19200);
   Laser.begin(19200);
-  Serial.println("Arduino 1 : je suis pret a recevoir/emmettre");
+  Serial.println("Pret à echanger");
 }
 
 void loop(){
