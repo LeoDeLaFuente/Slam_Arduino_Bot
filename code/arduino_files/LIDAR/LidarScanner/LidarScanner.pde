@@ -11,7 +11,7 @@
 import processing.serial.*;
 
 Serial serial;
-int serialPortNumber = 1;
+int serialPortNumber = 0;
 float angle = 6.5f;
 float angleIncrement = 0;
 float xOffset = 3.0;
