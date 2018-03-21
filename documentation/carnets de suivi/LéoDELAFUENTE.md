@@ -70,5 +70,9 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 ## Travail personnel du 22 Février
  - #### Mise en route du robot
     Après avoir récupéré une roue codeuse sur un robot d'un autre groupe qui ne s'en servait pas, j ai commencé à faire les essais pour faire tourner les roues du robot en même temps et commencer à programmer les mouvements élémentaires du robot. Je me suis aperçu que mes moteurs tournaient lentement, et pense que celà est dû au fait que j'alimente le pont en H et l'arduino avec la même pile de 9v qui n'est pas assez puissante.
+    
+## Séance du 21 Février
+ - #### Changement du support du robot
+ 
 
  
