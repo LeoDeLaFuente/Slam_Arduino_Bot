@@ -59,6 +59,8 @@ Serial.println(avancer_tick);
 }
 
 void loop() {
+//action();
+Serial.println(avancer_tick);
 
 int speed_A=255;
 int speed_B=255;
@@ -67,11 +69,14 @@ int speed_B=255;
 
   
   
-  if(avancer_tick-tick_codeuse_A<150){
+  if(avancer_tick-tick_codeuse_A<500){
     speed_A=10;
+    Serial.print("A");
   }
-  if(avancer_tick-tick_codeuse_B<150){
+  if(avancer_tick-tick_codeuse_B<500){
     speed_B=10;
+    Serial.print("B");
+
   }
   Serial.print(tick_codeuse_A);
   Serial.print(" | ");
@@ -168,6 +173,13 @@ else {
   //Serial.println("    "); // Creates a blank line printed on the serial monitor
   break;
   
+  case '6': // Motor 2 Reverse
+  analogWrite(speedPinB, speed_B);
+  digitalWrite(dir1PinB, HIGH);
+  digitalWrite(dir2PinB, LOW);
+ 
+  break;
+  
  
   default:
   // turn all the connections off if an unmapped key is pressed:
@@ -199,3 +211,49 @@ int convert(int cm){
   int tick=roue*80*4;
   return tick;
   }
+
+void action(int commande, int dist){ 
+  /* variable commande : 
+      1 : avancer
+      2 : reculer
+      3 : tour sens horaire
+      4 : tour sens anti-horaire
+  */
+  
+  // variable dist => distance en cm
+  // note : si la commande est un tour , la variable dist est l'angle en degré
+
+  switch (commande) {
+    case '1' :
+      //paramétrage du sens de rotation des moteurs
+      inByte_A = '1'; 
+      inByte_B = '4';
+
+      //initialisation des compteurs
+      tick_codeuse_A = 0; 
+      tick_codeuse_B = 0; 
+
+      avancer_tick=convert(dist);
+    
+    break;
+    case '2' :
+      //paramétrage du sens de rotation des moteurs
+      inByte_A = '3'; 
+      inByte_B = '6';
+
+      //initialisation des compteurs
+      tick_codeuse_A = 0; 
+      tick_codeuse_B = 0; 
+
+      avancer_tick=convert(dist);
+    break;
+//    case '3':
+//    break;
+//    case '4'  : 
+  }
+    
+
+}
+
+
+
