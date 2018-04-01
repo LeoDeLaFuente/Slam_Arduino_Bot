@@ -99,7 +99,7 @@ Tâches effectuées :
  
    ***  
 
-## Séance du 23 Février
+## Séance du 21 Février
 
   - Changement de voie pour les mesures télémétriques du robot. 
   
@@ -120,3 +120,4 @@ Tâches effectuées :
   
   - La solution pour cette dernière difficultée est de peut être d'utiliser un slip-ring pour faire passer les cables.
 
+## Séance du 28 Mars
