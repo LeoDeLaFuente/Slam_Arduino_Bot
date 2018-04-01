@@ -13,8 +13,8 @@ LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 // Modify to avoid hitting limits imposed by pan/tilt bracket geometry
 int minPosX = 0;
 int maxPosX = 180;
-int minPosY = 26;
-int maxPosY = 125;
+int minPosY = 60;
+int maxPosY = 130;
 
 int buttonPin = A0;
 int buttonValue = 0;

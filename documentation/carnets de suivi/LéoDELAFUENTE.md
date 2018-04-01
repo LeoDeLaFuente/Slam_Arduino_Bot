@@ -71,8 +71,17 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  - #### Mise en route du robot
     Après avoir récupéré une roue codeuse sur un robot d'un autre groupe qui ne s'en servait pas, j ai commencé à faire les essais pour faire tourner les roues du robot en même temps et commencer à programmer les mouvements élémentaires du robot. Je me suis aperçu que mes moteurs tournaient lentement, et pense que celà est dû au fait que j'alimente le pont en H et l'arduino avec la même pile de 9v qui n'est pas assez puissante.
     
-## Séance du 21 Février
+## Séance du 12 Mars
  - #### Changement du support du robot
+   J'ai récupéré un support différent permettant de faire de vrai test sur les déplacements du robot, mais il faut réadapter les moteurs pour qu'il se fixent sur le support.
+ 
+ ## fab lab le 20 Mars
+ - #### Création d'une pièce d'adaptation
+  J ai réalisé à l aide de la découpe laser une pièce permettant d'adaptater les moteurs à des equerres pour fixer le tout au support du robot. Il manque juste des rivets et la fixation sur le support.
+  
+
+ 
+   
  
 
  

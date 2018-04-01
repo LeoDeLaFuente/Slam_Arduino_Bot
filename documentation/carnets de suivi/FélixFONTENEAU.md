@@ -95,15 +95,15 @@ Tâches effectuées :
  
  ## Travail personel entre les séances  
  
-  - Remise en état de la tourelle, mais problèmes de précision ainsi que de montage concernant cette dernière.
+  - Remise en état de la tourelle, mais problèmes de précision ainsi que de montage concernant cette dernière. En effet fixer stablement et précisement le laser sur la tourelle est délicat. Les cables reliant le laser au module arduino sont peu souples et tirent lors des changement d'orientation pouvant potentiellement troubler les mesures.
  
    ***  
 
-## Séance du 23 Février
+## Séance du 21 Février
 
   - Changement de voie pour les mesures télémétriques du robot. 
   
-  - En effet la tourelle munie d'un servo moteur permet d'effectuer environs 3 mesures par secondes avec une précision à revoir.
+  - En effet la tourelle munie d'un servo moteur permet d'effectuer environs 3 mesures par secondes avec une précision à revoir (stabilité sur la tourelle).
   
   - Mr P. Masson a commandé un Lidar pour tester cette posibilité.  
   Le lidar permetrai des mesures en "continu" et sur un axe en rotation continu. Cela augmenterai la rapidité de cartographie de notre systeme.
@@ -120,3 +120,4 @@ Tâches effectuées :
   
   - La solution pour cette dernière difficultée est de peut être d'utiliser un slip-ring pour faire passer les cables.
 
+## Séance du 28 Mars
