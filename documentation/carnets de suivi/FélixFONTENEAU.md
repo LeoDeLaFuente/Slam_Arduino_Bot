@@ -134,7 +134,7 @@ Tâches effectuées :
   
   - Récupération d'un lidar monté sur deux servo moteur. 
   
-  <img src="/documentation/Images/lidar.jpg"/> 
+  <img src="/documentation/Images/lidar.jpg" height="200"/> 
   
   - Ce Lidar n'est pas monté sur un moteur à rotation continue, il n'a donc pas besoin de slip ring pour faire passer les câbles. 
   
