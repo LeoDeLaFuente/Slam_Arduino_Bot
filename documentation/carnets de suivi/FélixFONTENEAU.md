@@ -119,5 +119,22 @@ Tâches effectuées :
     + Transfert difficile pour les câbles (gestion de l'entortillement des câbles du lidar sur la tourelle).
   
   - La solution pour cette dernière difficultée est de peut être d'utiliser un slip-ring pour faire passer les cables.
-
+  
+## Travail personel entre les séances  
+ 
+  - Peu de travail fut fourni entre ces deux séance, j'étais en attente des pieces pour la tourelle.
+  
+  - Arrivé du lidar peu de temps avant la scéance.
+  
 ## Séance du 28 Mars
+  
+  - Récupération d'un lidar monté sur deux servo moteur. 
+  
+  <img src="documentation/Images/lidar.jpg"/> 
+  
+  - Ce Lidar n'est pas monté sur un moteur à rotation continue, il n'a donc pas besoin de slip ring pour faire passer les câbles. 
+  
+  - Lidar rapide (100Hz) mais la vitesse d'execution stable est plus lente environ 60Hz. 
+  
+  - Le lidar beug parfois et affiche une valeur en boucle pendant une centaine de mesures, problème à corriger par la suite.
+
