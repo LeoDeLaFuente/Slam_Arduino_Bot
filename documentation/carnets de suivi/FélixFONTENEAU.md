@@ -141,4 +141,8 @@ Tâches effectuées :
   - Lidar rapide (100Hz) mais la vitesse d'execution stable est plus lente environ 60Hz. 
   
   - Le lidar beug parfois et affiche une valeur en boucle pendant une centaine de mesures, problème à corriger par la suite.
+  
+  - Mais avant tout ce Lidar est bien mieux adapté à notre projet.
+  
+  
 
