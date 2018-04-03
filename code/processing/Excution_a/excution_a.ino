@@ -6,6 +6,11 @@ void setup()
  
 void loop()
 {
-  Serial.println("150;F: 1,540m 1235");
-  delay(100);
+  for(int i = 0; i < 130; i++){
+    String angle = String(i);
+    String mesure = String(i*0.1 + 3);
+    Serial.println(angle+";F: "+mesure+"m 1235");
+    delay(3);
+  }
+  delay(1000);
 }
