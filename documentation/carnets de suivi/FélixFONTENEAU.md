@@ -66,12 +66,12 @@ Tâches effectuées :
 ## Travail personel durant la semaine de ski
 
 Tâches effectuées : 
-  + Création d'une simulation du laser pour débuter la programation, [code processing](code/computer files/processing/execution_p/execution_p.pde) 
+  + Création d'une simulation du laser pour débuter la programation, <a href="code/computer files/processing/execution_p/execution_p.pde"> code processing </a>
   
   + Début du traitement des données sur processing. 
   
   + Création de l'interface et de l'affichage de la carte en fonction des données reçues  
-  [code processing](code/computer files/processing/execution_p/execution_p.pde)
+  <a href="code/computer files/processing/execution_p/execution_p.pde"> code </a>
   Cela permet de nous donner une base afin de pouvoir commencer la partie programmation en parallèle de la partie électronique.  
   
   + Le code  et l'interface sont plutôt ajustable pour convenir a des quelconques changements de projet.
