@@ -23,13 +23,13 @@ Tâches effectuées :
   
   + Liste du matériel : [liste](/documentation/liste_du_materiel.md)
  
-  ***  
+ ***  
 
 ## Séance du 8 Janvier 2018
 
 Tâches effectuées :
   + Réception et début d'utilisation du module laser. Débuts concluants pour les premiers tests avec le laser. En effet il marche parfaitement dans les conditions dont le souhaitons. Voir : [code basique laser automatique]( /code/arduino files/test_laser_san_delay/test_laser_san_delay.ino)
-  <img src="/documentation/Images/soudure_laser.jpg" alt="photo soudure" height="300"/>
+  <img src="documentation/Images/soudure_laser.jpg" alt="photo soudure" height="300"/>
   
   + Création de la présentation du module laser : [ici](/Construction_Projet/Laser.md)
   
@@ -120,17 +120,21 @@ Tâches effectuées :
   
   - La solution pour cette dernière difficultée est de peut être d'utiliser un slip-ring pour faire passer les cables.
   
+  ***
+  
 ## Travail personel entre les séances  
  
   - Peu de travail fut fourni entre ces deux séance, j'étais en attente des pieces pour la tourelle.
   
   - Arrivé du lidar peu de temps avant la scéance.
   
+  ***
+  
 ## Séance du 28 Mars
   
   - Récupération d'un lidar monté sur deux servo moteur. 
   
-  <img src="documentation/Images/lidar.jpg"/> 
+  <img src="/documentation/Images/lidar.jpg"/> 
   
   - Ce Lidar n'est pas monté sur un moteur à rotation continue, il n'a donc pas besoin de slip ring pour faire passer les câbles. 
   
