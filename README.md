@@ -6,7 +6,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Projet école de création d'un robot arduino permettant la cartographie d'une salle sans données GPS.
 
 ## Présentation
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ce projet à pour but de réaliser une carte (2D) d'une salle à l aide d'un robot se déplaçant dans cette pièce et réalisant des mesures graçe à un télémètre Laser. Ce robot sera dans un premier temps dirigé par utilisateur graçe à un ordinateur et une connexion sans fil. Nous utiliserons pour cela le logiciel processing permettant de traiter les données, afficher la carte et interpréter les commandes de l'utilisateur.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ce projet à pour but de réaliser une carte (2D) d'une salle à l'aide d'un robot se déplaçant dans cette pièce et réalisant des mesures graçe à un télémètre Laser et sans données GPS. Ce robot sera dans un premier temps dirigé par utilisateur graçe à un ordinateur et une connexion sans fil. Nous utiliserons pour cela le logiciel processing permettant de traiter les données, afficher la carte et interpréter les commandes de l'utilisateur.
 
 ![logo Processing](/documentation/Images/processing3-logo.png) ![logo ROS](/documentation/Images/rosLarge.png) 
 
