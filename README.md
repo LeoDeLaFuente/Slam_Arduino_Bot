@@ -28,7 +28,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 ***
 
 # Etat de l'avancement du projet : début février
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Le projet a avancé de façon homogène durant ces plusieurs semaines.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Le projet a avancé de façon homogène durant ces plusieurs semaines et voici la version <a href="documentation/Slam_arduino_bot_presentation.pdf">pdf</a> de la présentation faite en classe sur les chemins emprunté pour le projet.
 <br/>
 - Du côté de la tourelle laser, nous avons monté un télémetre laser sur un servo moteur à ouverture large (cf. fig. 1).<div style="text-align:center"><img src="documentation/Images/Tourelle_premiere_version.JPG" height="300"/></div>Le télémetre laser permet d'effectuer des mesures précises mais le montage sur le servo moteur est peu précis. La fréquence des mesures est faibles, environ 3Hz. Nous allons donc continuer avec cela pour le moment car le but principal est d'avoir une tourelle qui marche, dans un second temps nous verons des améliorations à apporter.
 
