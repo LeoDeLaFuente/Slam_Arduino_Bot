@@ -63,7 +63,7 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 
 ## Séance du 21 Février
 - #### Fabrication du premier robot en carton.
- J'ai fabriqué le premier essai de robot en carton. Celui-ci va me permettre de faires premiers essai avec les roues codeuse et d'améliorer le fonctionnement de mon code.
+ J'ai fabriqué le premier essai de robot en carton. Celui-ci va me permettre de faire premiers essai avec les roues codeuses et d'améliorer le fonctionnement de mon code.
 ![Premier robot en carton](/documentation/Images/robot_carton_1.jpg)  
 
 
@@ -73,14 +73,23 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
     
 ## Séance du 12 Mars
  - #### Changement du support du robot
-   J'ai récupéré un support différent permettant de faire de vrai test sur les déplacements du robot, mais il faut réadapter les moteurs pour qu'il se fixent sur le support.
+   J'ai récupéré un support différent permettant de faire de vrai test sur les déplacements du robot, mais il faut réadapter les moteurs pour qu'ils se fixent sur le support.
  
  ## fab lab le 20 Mars
  - #### Création d'une pièce d'adaptation
-  J ai réalisé à l aide de la découpe laser une pièce permettant d'adaptater les moteurs à des equerres pour fixer le tout au support du robot. Il manque juste des rivets et la fixation sur le support.
+  J'ai réalisé à l'aide de la découpe laser une pièce permettant d'adaptater les moteurs à des equerres pour fixer le tout au support du robot. Il manque juste des rivets et la fixation sur le support.
   
-
+ ## Séance du 28 Mars
  
+ - #### Mouvements élémentaire
+  J'ai réalisé une fonction permettant de faire avancer et reculer le robot, mais je n'ai pas pu le tester, car le robot n'est pas fini d'être monté. Je me suis par contre aperçu que les deux moteurs ne tournent pas à la même vitesse. Il va donc falloir réaliser un asservissement en vitesse sur les moteurs.
+  
+ ## fab lab le 3 Avril
+ 
+ - #### Fixation des pièces avec rivets
+ Après avoir acheté les rivets, je suis allé au fab lab pour fixer les moteurs aux equerres graçe aux pièces réalisé le 20 Mars. J ai aussi commencé à percer le support pour assembler les équerres au support.
+
+ ![Piece moteur equerre assemblé](/documentation/Images/29995243_1791994864186311_792137066_o.jpg)  
    
  
 

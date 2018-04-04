@@ -23,13 +23,13 @@ Tâches effectuées :
   
   + Liste du matériel : [liste](/documentation/liste_du_materiel.md)
  
-  ***  
+ ***  
 
 ## Séance du 8 Janvier 2018
 
 Tâches effectuées :
   + Réception et début d'utilisation du module laser. Débuts concluants pour les premiers tests avec le laser. En effet il marche parfaitement dans les conditions dont le souhaitons. Voir : [code basique laser automatique]( /code/arduino files/test_laser_san_delay/test_laser_san_delay.ino)
-  <img src="/documentation/Images/soudure_laser.jpg" alt="photo soudure" height="300"/>
+  <img src="documentation/Images/soudure_laser.jpg" alt="photo soudure" height="300"/>
   
   + Création de la présentation du module laser : [ici](/Construction_Projet/Laser.md)
   
@@ -66,12 +66,12 @@ Tâches effectuées :
 ## Travail personel durant la semaine de ski
 
 Tâches effectuées : 
-  + Création d'une simulation du laser pour débuter la programation, [code processing](code/computer files/processing/execution_p/execution_p.pde) 
+  + Création d'une simulation du laser pour débuter la programation, <a href="code/computer files/processing/execution_p/execution_p.pde"> code processing </a>
   
   + Début du traitement des données sur processing. 
   
   + Création de l'interface et de l'affichage de la carte en fonction des données reçues  
-  [code processing](code/computer files/processing/execution_p/execution_p.pde)
+  <a href="code/computer files/processing/execution_p/execution_p.pde"> code </a>
   Cela permet de nous donner une base afin de pouvoir commencer la partie programmation en parallèle de la partie électronique.  
   
   + Le code  et l'interface sont plutôt ajustable pour convenir a des quelconques changements de projet.
@@ -119,5 +119,30 @@ Tâches effectuées :
     + Transfert difficile pour les câbles (gestion de l'entortillement des câbles du lidar sur la tourelle).
   
   - La solution pour cette dernière difficultée est de peut être d'utiliser un slip-ring pour faire passer les cables.
-
+  
+  ***
+  
+## Travail personel entre les séances  
+ 
+  - Peu de travail fut fourni entre ces deux séance, j'étais en attente des pieces pour la tourelle.
+  
+  - Arrivé du lidar peu de temps avant la scéance.
+  
+  ***
+  
 ## Séance du 28 Mars
+  
+  - Récupération d'un lidar monté sur deux servo moteur. 
+  
+  <img src="/documentation/Images/lidar.jpg" height="200"/> 
+  
+  - Ce Lidar n'est pas monté sur un moteur à rotation continue, il n'a donc pas besoin de slip ring pour faire passer les câbles. 
+  
+  - Lidar rapide (100Hz) mais la vitesse d'execution stable est plus lente environ 60Hz. 
+  
+  - Le lidar beug parfois et affiche une valeur en boucle pendant une centaine de mesures, problème à corriger par la suite.
+  
+  - Mais avant tout ce Lidar est bien mieux adapté à notre projet.
+  
+  
+
