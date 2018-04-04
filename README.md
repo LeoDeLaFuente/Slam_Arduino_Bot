@@ -34,10 +34,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 <br/>
 
-- Du côté du robot nous nous sommes concentrés sur le fonctionnement délicat des roues codeuses (cf. fig. 2).<div style="text-align:center"><img src="documentation/Images/roue_codeuse_1_.JPG" height="300"/></div>Ces roues ont été difficiles à appréhender du fait des mauvaises connections avec la partie du contrôleur des roues crantées.
-
-<br/>
-
+- Du côté du robot nous nous sommes concentrés sur le fonctionnement délicat des roues codeuses (cf. fig. 2).<div style="text-align:center"><img src="documentation/Images/roue_codeuse_1_.JPG" height="300"/></div>Ces roues ont été difficiles à appréhender du fait des mauvaises connections avec la partie du contrôleur des roues crantées. 
 
 - Pour finir, le code au niveau de l'ordinateur avance bien. Le traitement des données peut s'effectuer sous plusieures plateformes. Nous avons choisi Processing afin de traiter les données et de les afficher. L'affichage est pratique car Processing permet de programmer facilement une interface graphique simple.
 
@@ -52,8 +49,14 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 - Du côté du laser, 
 
+-Du coté du robot,
+Nous avons récupéré des nouveaux encodeurs pour les roues après que les anciens est grillés. Nous avons tout bien recabler les moteurs et réalisé un robot un carton pour réaliser les premiers tests. Il manque une batterie pour pouvoir coder les mouvements du robot et les tester les mouvements 
+
 ***
 
 # Etat de l'avancement du projet : début avril
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+-du coté du robot,
+L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur le support.
