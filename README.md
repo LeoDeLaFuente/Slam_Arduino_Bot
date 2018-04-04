@@ -47,7 +47,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 <br/>
 
-- Du côté du laser, des problèmes sont apparus. En effet le télémetre laser ne réagisais plus et après beaucoup de tentatives de débeugage, nous avons remarqué que sont impédence d'entré été très faible (de l'ordre de l'Ohm alors qu'un laser normal a un impédence de l'ordre du mégaOhm). Le laser a du grillé suite à un mauvais voyage. Pour le remplacer, un lidar 
+- Du côté du laser, des problèmes sont apparus. En effet le télémetre laser ne réagisais plus et après beaucoup de tentatives de débeugage, nous avons remarqué que sont impédence d'entré été très faible (de l'ordre de l'Ohm alors qu'un laser normal a un impédence de l'ordre du mégaOhm). Le laser a du grillé suite à un mauvais voyage. Pour le remplacer nous avons un autre télémetre laser à notre disposition, mais la fréquence des mesures commence à poser des problèmes.
 
 - Du coté du robot,
 Nous avons récupéré des nouveaux encodeurs pour les roues après que les anciens est grillés. Nous avons tout bien recabler les moteurs et réalisé un robot un carton pour réaliser les premiers tests. Il manque une batterie pour pouvoir coder les mouvements du robot et tester les mouvements 
@@ -56,7 +56,8 @@ Nous avons récupéré des nouveaux encodeurs pour les roues après que les anci
 
 # Etat de l'avancement du projet : début avril
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+- Du côté du laser, nous avons changé de module et nous sommes parti sur un Lidar. En effet, le lidar a beau etre moins précis et avec une distance de mesure moindre, il a une fréquence de mesure rapide (100 Hz). Cette rapidité permet d'avoir un beau nuage de point plus rapidement. De plus avoir beaucoup de point permettra d'avoir une plus grande précision sur un algorithme de SLAM. Voici donc le lidar, monté sur deux servos moteurs : <img href="documentation/Images/lidar.jpg" height="300"/>
 
 - Du coté du robot,
 L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur le support. Il faut aussi que l'on commande de nouvelle roue avec une bonne fixation sur les axes des moteurs.
+Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
