@@ -49,7 +49,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 - Du côté du laser, 
 
--Du coté du robot,
+- Du coté du robot,
 Nous avons récupéré des nouveaux encodeurs pour les roues après que les anciens est grillés. Nous avons tout bien recabler les moteurs et réalisé un robot un carton pour réaliser les premiers tests. Il manque une batterie pour pouvoir coder les mouvements du robot et les tester les mouvements 
 
 ***
@@ -58,5 +58,5 @@ Nous avons récupéré des nouveaux encodeurs pour les roues après que les anci
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
--du coté du robot,
-L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur le support.
+- Du coté du robot,
+L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur le support. Il faut aussi que l'on commande de nouvelle roue avec une bonne fixation sur les axes des moteurs.
