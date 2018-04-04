@@ -56,8 +56,10 @@ Nous avons récupéré des nouveaux encodeurs pour les roues après que les anci
 
 # Etat de l'avancement du projet : début avril
 
-- Du côté du laser, nous avons changé de module et nous sommes parti sur un Lidar. En effet, le lidar a beau etre moins précis et avec une distance de mesure moindre, il a une fréquence de mesure rapide (100 Hz). Cette rapidité permet d'avoir un beau nuage de point plus rapidement. De plus avoir beaucoup de point permettra d'avoir une plus grande précision sur un algorithme de SLAM. Voici donc le lidar, monté sur deux servos moteurs : <img href="documentation/Images/lidar.jpg" height="300"/>
+- Du côté du laser, nous avons changé de module et nous sommes parti sur un Lidar. En effet, le lidar a beau etre moins précis et avec une distance de mesure moindre, il a une fréquence de mesure rapide (100 Hz). Cette rapidité permet d'avoir un beau nuage de point plus rapidement. De plus avoir beaucoup de point permettra d'avoir une plus grande précision sur un algorithme de SLAM. Voici donc le lidar, monté sur deux servos moteurs : <img src="documentation/Images/lidar.jpg" height="300"/>
 
 - Du coté du robot,
 L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur le support. Il faut aussi que l'on commande de nouvelle roue avec une bonne fixation sur les axes des moteurs.
-Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
+
+- Parallèlement à ces deux tâches, nous avons aussi avancé l'interface graphique ainsi que le transfert du flux de données.
+<img src="documentation/Images/image_simulation_interface.png" height="300"/> Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
