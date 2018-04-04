@@ -47,7 +47,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 <br/>
 
-- Du côté du laser, 
+- Du côté du laser, des problèmes sont apparus. En effet le télémetre laser ne réagisais plus et après beaucoup de tentatives de débeugage, nous avons remarqué que sont impédence d'entré été très faible (de l'ordre de l'Ohm alors qu'un laser normal a un impédence de l'ordre du mégaOhm). Le laser a du grillé suite à un mauvais voyage. Pour le remplacer, un lidar 
 
 - Du coté du robot,
 Nous avons récupéré des nouveaux encodeurs pour les roues après que les anciens est grillés. Nous avons tout bien recabler les moteurs et réalisé un robot un carton pour réaliser les premiers tests. Il manque une batterie pour pouvoir coder les mouvements du robot et tester les mouvements 
