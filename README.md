@@ -50,7 +50,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 - Du côté du laser, 
 
 - Du coté du robot,
-Nous avons récupéré des nouveaux encodeurs pour les roues après que les anciens est grillés. Nous avons tout bien recabler les moteurs et réalisé un robot un carton pour réaliser les premiers tests. Il manque une batterie pour pouvoir coder les mouvements du robot et les tester les mouvements 
+Nous avons récupéré des nouveaux encodeurs pour les roues après que les anciens est grillés. Nous avons tout bien recabler les moteurs et réalisé un robot un carton pour réaliser les premiers tests. Il manque une batterie pour pouvoir coder les mouvements du robot et tester les mouvements 
 
 ***
 
