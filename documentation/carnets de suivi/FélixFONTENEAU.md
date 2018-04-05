@@ -124,9 +124,9 @@ Tâches effectuées :
   
 ## Travail personel entre les séances  
  
-  - Peu de travail fut fourni entre ces deux séance, j'étais en attente des pieces pour la tourelle.
+  - Peu de travail fut fourni sur la tourelle entre ces deux séance, j'étais en attente des pieces. Donc j'ai profité pour améliorer le code Processing. 
   
-  - Arrivé du lidar peu de temps avant la scéance.
+  - Arrivé du lidar peu de temps avant la scéance du 28 Mars.
   
   ***
   
@@ -143,6 +143,9 @@ Tâches effectuées :
   - Le lidar beug parfois et affiche une valeur en boucle pendant une centaine de mesures, problème à corriger par la suite.
   
   - Mais avant tout ce Lidar est bien mieux adapté à notre projet.
+  
+  - Il reste maintenant à bien adapter le fonctionnement de ce lidar au code déjà existant. Puis il fut que j'attaque les communications RF.
+  
   
   
 
