@@ -12,8 +12,7 @@ void loop()
     String angle = String(i);
     String mesure = String(i*0.1 + 3);
     Serial.println(angle+";F: "+mesure+"m 1235");
-    delay(3);
   }
-  delay(2000);
-  k = 130;
+  //delay(2000);
+  k += 130;
 }

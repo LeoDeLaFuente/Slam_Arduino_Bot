@@ -4,6 +4,7 @@ Serial  myPort; // Création objet désignant le port série
 int resolution = 2;
 float zoom = 1;
 LinkedList<Donnee> data;
+LinkedList<Donnee> enAtt;
 int decallageV = 0;
 int decallageH = 0;
 
@@ -20,6 +21,8 @@ void setup(){
   myPort = new Serial(this, portName, 19200); //myPort = new Serial(this, "/dev/ttyACM0", 9600);
   frameRate(30); 
   data = new LinkedList<Donnee>();
+  enAtt = new LinkedList<Donnee>();
+
 }
  
  
@@ -41,7 +44,7 @@ void boussole(){
 
 void pointage(){
    for(Donnee d : data){
-     println("marche");
+     //println("marche");
      float positionX = (width/(2*zoom) + d.getPosX())*zoom+decallageH;
      float positionY = (height/(2*zoom) - d.getPosY())*zoom+decallageV;
      float landmarkX = (width/(2*zoom) + d.getLandX())*zoom+decallageH;
@@ -53,8 +56,17 @@ void pointage(){
      line(positionX,positionY,landmarkX,landmarkY);
      fleche(positionX, positionY, d.getOrientation());
   }
+  if(enAtt.size() != 0){
+    ajoutData();
+  }
 }
 
+void ajoutData(){
+  for(Donnee d : enAtt){
+    data.push(d);
+  }
+  enAtt.clear();
+}
 void fleche(float px, float py,float orientation){
   stroke(#FF1500);
   line(px,py,px+15*cos(orientation),py+15*sin(orientation));
@@ -69,11 +81,10 @@ void fleche(float px, float py,float orientation){
 //---------------- Fonctions de gestion de réception au port série --------------
 void serialEvent (Serial myPort){ 
   String inString = myPort.readStringUntil('\n'); // chaine stockant la chaîne reçue sur le port Série
-  if (inString != null){ // si la chaine recue n'est pas vide
+  if (inString != null){// si la chaine recue n'est pas vide
     //ajouter un élément au tableau de données.
-      println(inString);
-      data.push(new Donnee(inString));
-    
+      //println(inString);
+      enAtt.push(new Donnee(inString));
   }
 } 
 
@@ -95,8 +106,6 @@ void keyTyped() {
   if (key == 'z') decallageV += 10;
   if (key == 's') decallageV -= 10;
 }
-
-
 
 
 
