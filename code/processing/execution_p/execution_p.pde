@@ -1,22 +1,25 @@
 import processing.serial.*; // importe la librairie série processing
+import java.util.*;
 Serial  myPort; // Création objet désignant le port série
 int resolution = 2;
 float zoom = 1;
-boolean debut = false;
-Donnee[] data;
+LinkedList<Donnee> data;
 int decallageV = 0;
 int decallageH = 0;
 
 
 /* Initialisation du programme, */
 void setup(){
+  for (String name : Serial.list()){
+    println(name);
+  };
   background(0); 
   size(1200,700); 
   String portName = Serial.list()[3]; 
   println(portName);
   myPort = new Serial(this, portName, 19200); //myPort = new Serial(this, "/dev/ttyACM0", 9600);
   frameRate(30); 
-  data = new Donnee[1];
+  data = new LinkedList<Donnee>();
 }
  
  
@@ -37,19 +40,18 @@ void boussole(){
 }
 
 void pointage(){
-  if(debut){
-     for(Donnee d : data){  
-       float positionX = (width/(2*zoom) + d.getPosX())*zoom+decallageH;
-       float positionY = (height/(2*zoom) - d.getPosY())*zoom+decallageV;
-       float landmarkX = (width/(2*zoom) + d.getLandX())*zoom+decallageH;
-       float landmarkY = (height/(2*zoom) - d.getLandY())*zoom+decallageV;
-       fill(255);
-       stroke(#FFFFFF);
-       rect(landmarkX,landmarkY,resolution, resolution);
-       stroke(#7D7D7D);
-       line(positionX,positionY,landmarkX,landmarkY);
-       fleche(positionX, positionY, d.getOrientation());
-    }
+   for(Donnee d : data){
+     println("marche");
+     float positionX = (width/(2*zoom) + d.getPosX())*zoom+decallageH;
+     float positionY = (height/(2*zoom) - d.getPosY())*zoom+decallageV;
+     float landmarkX = (width/(2*zoom) + d.getLandX())*zoom+decallageH;
+     float landmarkY = (height/(2*zoom) - d.getLandY())*zoom+decallageV;
+     fill(255);
+     stroke(#FFFFFF);
+     rect(landmarkX,landmarkY,resolution, resolution);
+     stroke(#7D7D7D);
+     line(positionX,positionY,landmarkX,landmarkY);
+     fleche(positionX, positionY, d.getOrientation());
   }
 }
 
@@ -69,19 +71,9 @@ void serialEvent (Serial myPort){
   String inString = myPort.readStringUntil('\n'); // chaine stockant la chaîne reçue sur le port Série
   if (inString != null){ // si la chaine recue n'est pas vide
     //ajouter un élément au tableau de données.
-    if (data.length == 1 && !debut){
-      debut = true;
-      data[0] = new Donnee(inString);
-    } else {
-      Donnee[] res = data;
-      data = new Donnee[res.length+1];
-      int i = 0;
-      for(Donnee d : res){
-        data[i] = d;
-        i++;
-      }
-      data[i] = new Donnee(inString);
-    }
+      println(inString);
+      data.push(new Donnee(inString));
+    
   }
 } 
 
