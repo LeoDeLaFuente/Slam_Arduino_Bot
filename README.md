@@ -62,4 +62,6 @@ Nous avons récupéré des nouveaux encodeurs pour les roues après que les anci
 L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur le support. Il faut aussi que l'on commande de nouvelle roue avec une bonne fixation sur les axes des moteurs.
 
 - Parallèlement à ces deux tâches, nous avons aussi avancé l'interface graphique ainsi que le transfert du flux de données.
-<img src="documentation/Images/image_simulation_interface.png" height="300"/> Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
+<img src="documentation/Images/image_simulation_interface.png" height="300"/>
+</br>
+Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
