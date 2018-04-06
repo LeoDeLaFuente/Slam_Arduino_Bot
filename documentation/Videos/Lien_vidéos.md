@@ -4,4 +4,4 @@
  
  - #### [Premier banchement](https://youtu.be/iydBeL7KhAE)
  
- - #### [Déplacements élémentaires](https://youtu.be/h0HItliRpBA)
+ - #### [premiers déplacements élémentaires](https://youtu.be/h0HItliRpBA)
