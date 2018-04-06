@@ -64,8 +64,8 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 ## Séance du 21 Février
 - #### Fabrication du premier robot en carton.
  J'ai fabriqué le premier essai de robot en carton. Celui-ci va me permettre de faire premiers essai avec les roues codeuses et d'améliorer le fonctionnement de mon code.
-![Premier robot en carton](/documentation/Images/robot_carton_1.jpg)  
-<img src="/documentation/Images/robot_carton_1.jpg" height=300px alt="robot en carton" />
+ 
+<img src="/documentation/Images/robot_carton_1.jpg" height=300px alt="premier robot en carton" />
 
 
 ## Travail personnel du 22 Février
@@ -91,6 +91,19 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  Après avoir acheté les rivets, je suis allé au fab lab pour fixer les moteurs aux equerres graçe aux pièces réalisé le 20 Mars. J ai aussi commencé à percer le support pour assembler les équerres au support.
 
  <img src="/documentation/Images/29995243_1791994864186311_792137066_o.jpg" height="300" alt="assemblage equerre et moteur" /> 
+ 
+ ## séance du 5 Avril
+ 
+ - #### Présentation de mi-parcous auprès de nos professeur. 
+ [Celle-ci est visible ici](https://github.com/LeoDeLaFuente/Slam_Arduino_Bot/blob/master/documentation/Slam_arduino_bot_mi_parcours.pdf). Elle nous a permit de rédéfinir notre planning et de faire le point sur notre projet.
+ 
+ -#### Fixation des moteurs+équerres sur le support. 
+ J ai rivetté les equerres sur le support, ce qui m'a permis de placer l'arduino et la batterie et de recabler le tout. 
+ 
+ [Voici la vidéo du premier branchement](https://youtu.be/iydBeL7KhAE).
+ 
+ Il manque un pièce sur le devant pour surélever au dessus de la roue folle pour que le support reste bien plat, mais celui-ci n'est pas necessaire pour coder les déplacements du robot.
+ 
  
 
  
