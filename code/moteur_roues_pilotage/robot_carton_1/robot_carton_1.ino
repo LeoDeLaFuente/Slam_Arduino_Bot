@@ -23,8 +23,7 @@ int dir1PinB = 6;
 int dir2PinB = 7;
 int speedPinB = 10; // Needs to be a PWM pin to be able to control motor speed
 
-int speed_A=0;
-int speed_B=0;
+
 
 int inByte_A = 0;
 int inByte_B = 0;
@@ -33,6 +32,9 @@ unsigned int tick_codeuse_A = 0;
 unsigned int tick_codeuse_B = 0; 
 
 int avancer_tick=0;
+
+int speed_B;
+int speed_A;
 
 void setup() {  // Setup runs once per reset
 // initialize serial communication @ 9600 baud:
@@ -49,149 +51,163 @@ pinMode(speedPinB,OUTPUT);
 
 attachInterrupt(digitalPinToInterrupt(2), compteur_A, CHANGE); // Interruption sur tick de la codeuse (interruption 0 = pin2 arduino mega)
 attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
-int avancer_cm=150;
-inByte_A = '1';
-inByte_B = '4';
 
-avancer_tick=convert(avancer_cm);
+
+//inByte_A = '1';
+//inByte_B = '4';
+
+int avancer_cm=150;
+
+//avancer_tick=convert(avancer_cm);
+
+
+action(2, avancer_cm);
+
+
+
 Serial.println(avancer_tick);
   
 }
 
 void loop() {
-//action();
-Serial.println(avancer_tick);
+  
 
-int speed_A=255;
-int speed_B=255;
-// Initialize the Serial interface:
-
-
+  //action();
+  Serial.println(avancer_tick);
   
   
-  if(avancer_tick-tick_codeuse_A<500){
-    speed_A=10;
-    Serial.print("A");
-  }
-  if(avancer_tick-tick_codeuse_B<500){
-    speed_B=10;
-    Serial.print("B");
-
-  }
-  Serial.print(tick_codeuse_A);
-  Serial.print(" | ");
-  Serial.println(tick_codeuse_B);
-
-  
- //Serial.println(avancer_tick);
-if(tick_codeuse_A<avancer_tick){
-  
-  switch (inByte_A) {
-  
-  //______________Motor 1______________
-  
-  case '1': // Fait avancer les deux moteurs dans les sens de la marche
-  analogWrite(speedPinA, speed_A);//Sets speed variable via PWM 
-
-  
-  digitalWrite(dir1PinA, LOW);
-  digitalWrite(dir2PinA, HIGH);
-  
- 
-  
-  //Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
-  //Serial.println("    "); // Creates a blank line printed on the serial monitor
-  break;
-  
-  case '2': // Motor 1 Stop (Freespin)
-  analogWrite(speedPinA, 0);
-  digitalWrite(dir1PinA, LOW);
-  digitalWrite(dir2PinA, HIGH);
-  Serial.println("Motor 1 Stop");
-  Serial.println("    ");
-  break;
-  
-  case '3': // Motor 1 Reverse
-  analogWrite(speedPinA, speed_A);
-  digitalWrite(dir1PinA, HIGH);
-  digitalWrite(dir2PinA, LOW);
-  Serial.println("Motor 1 Reverse");
-  Serial.println("    ");
-  break;
-  
-  //______________Motor 2______________
-  
-  case '4': // Motor 2 Forward
+  // Initialize the Serial interface:
   
   
-  Serial.println("Motor 2 Forward");
-  Serial.println("    ");
-  break;
+    
+    
+    if(avancer_tick-tick_codeuse_A<250){
+      speed_A=20;
+      
+    }
+    if(avancer_tick-tick_codeuse_B<250){
+      speed_B=20;
+      
   
-  case '5': // Motor 1 Stop (Freespin)
-  analogWrite(speedPinB, 0);
-  digitalWrite(dir1PinB, LOW);
-  digitalWrite(dir2PinB, HIGH);
-  Serial.println("Motor 2 Stop");
-  Serial.println("    ");
-  break;
+    }
+    Serial.print(tick_codeuse_A);
+    Serial.print(" | ");
+    Serial.println(tick_codeuse_B);
   
-  case '6': // Motor 2 Reverse
-  analogWrite(speedPinB, speed_B);
-  digitalWrite(dir1PinB, HIGH);
-  digitalWrite(dir2PinB, LOW);
-  Serial.println("Motor 2 Reverse");
-  Serial.println("    ");
-  break;
+    
+   //Serial.println(avancer_tick);
+  if(tick_codeuse_A<avancer_tick){
+    
+    switch (inByte_A) {
+    
+    //______________Motor 1______________
+    
+    case '1': // Fait avancer les deux moteurs dans les sens de la marche
+    analogWrite(speedPinA, speed_A);//Sets speed variable via PWM 
   
-  default:
-  // turn all the connections off if an unmapped key is pressed:
-  for (int thisPin = 2; thisPin < 11; thisPin++) {
-  digitalWrite(thisPin, LOW);
-  }
+    
+    digitalWrite(dir1PinA, LOW);
+    digitalWrite(dir2PinA, HIGH);
+    
+   
+    
+    //Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
+    //Serial.println("    "); // Creates a blank line printed on the serial monitor
+    break;
+    
+    case '2': // Motor 1 Stop (Freespin)
+    analogWrite(speedPinA, 0);
+    digitalWrite(dir1PinA, LOW);
+    digitalWrite(dir2PinA, HIGH);
+    Serial.println("Motor 1 Stop");
+    Serial.println("    ");
+    break;
+    
+    case '3': // Motor 1 Reverse
+    analogWrite(speedPinA, speed_A);
+    digitalWrite(dir1PinA, HIGH);
+    digitalWrite(dir2PinA, LOW);
+    Serial.println("Motor 1 Reverse");
+    Serial.println("    ");
+    break;
+    
+    //______________Motor 2______________
+    
+    case '4': // Motor 2 Forward
+    
+    
+    Serial.println("Motor 2 Forward");
+    Serial.println("    ");
+    break;
+    
+    case '5': // Motor 1 Stop (Freespin)
+    analogWrite(speedPinB, 0);
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, HIGH);
+    Serial.println("Motor 2 Stop");
+    Serial.println("    ");
+    break;
+    
+    case '6': // Motor 2 Reverse
+    analogWrite(speedPinB, speed_B);
+    digitalWrite(dir1PinB, HIGH);
+    digitalWrite(dir2PinB, LOW);
+    Serial.println("Motor 2 Reverse");
+    Serial.println("    ");
+    break;
+    
+    default:
+    // turn all the connections off if an unmapped key is pressed:
+    for (int thisPin = 2; thisPin < 11; thisPin++) {
+    digitalWrite(thisPin, LOW);
     }
       }
-else {
-  analogWrite(speedPinA, 0);
- }
-
- if(tick_codeuse_B<avancer_tick){
+        }
+  else {
+    analogWrite(speedPinA, 0);
+    digitalWrite(dir1PinA, LOW);
+    digitalWrite(dir2PinA, HIGH);
+   }
+  Serial.println(avancer_tick);
+   if(tick_codeuse_B<avancer_tick){
+    
+    switch (inByte_B) {
+    
+    //______________Motor 1______________
+    
+    case '4': // Fait avancer les deux moteurs dans les sens de la marche
+   
+    analogWrite(speedPinB, speed_B);
+    
   
-  switch (inByte_B) {
-  
-  //______________Motor 1______________
-  
-  case '4': // Fait avancer les deux moteurs dans les sens de la marche
- 
-  analogWrite(speedPinB, speed_B);
-  
-
-  digitalWrite(dir1PinB, LOW);
-  digitalWrite(dir2PinB, HIGH);
-  
-  //Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
-  //Serial.println("    "); // Creates a blank line printed on the serial monitor
-  break;
-  
-  case '6': // Motor 2 Reverse
-  analogWrite(speedPinB, speed_B);
-  digitalWrite(dir1PinB, HIGH);
-  digitalWrite(dir2PinB, LOW);
- 
-  break;
-  
- 
-  default:
-  // turn all the connections off if an unmapped key is pressed:
-  for (int thisPin = 2; thisPin < 11; thisPin++) {
-  digitalWrite(thisPin, LOW);
-  }
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, HIGH);
+    
+    //Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
+    //Serial.println("    "); // Creates a blank line printed on the serial monitor
+    break;
+    
+    case '6': // Motor 2 Reverse
+    analogWrite(speedPinB, speed_B);
+    digitalWrite(dir1PinB, HIGH);
+    digitalWrite(dir2PinB, LOW);
+   
+    break;
+    
+   
+    default:
+    // turn all the connections off if an unmapped key is pressed:
+    for (int thisPin = 2; thisPin < 11; thisPin++) {
+    digitalWrite(thisPin, LOW);
     }
       }
-else {
-  
-  analogWrite(speedPinB, 0);
- }
+        }
+  else {
+    
+    analogWrite(speedPinB, 0);
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, HIGH);
+   }
       
 }
       
@@ -224,7 +240,7 @@ void action(int commande, int dist){
   // note : si la commande est un tour , la variable dist est l'angle en degré
 
   switch (commande) {
-    case '1' :
+    case 1 :
       //paramétrage du sens de rotation des moteurs
       inByte_A = '1'; 
       inByte_B = '4';
@@ -233,17 +249,25 @@ void action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
+      speed_B=255;
+      speed_A=255;
+
       avancer_tick=convert(dist);
     
     break;
-    case '2' :
+    case 2 :
       //paramétrage du sens de rotation des moteurs
-      inByte_A = '3'; 
+      inByte_A = '1'; 
       inByte_B = '6';
 
       //initialisation des compteurs
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
+
+      speed_B=20;
+      speed_A=20;
+
+      
 
       avancer_tick=convert(dist);
     break;
