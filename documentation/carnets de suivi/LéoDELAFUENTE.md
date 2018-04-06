@@ -99,7 +99,8 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  [Celle-ci est visible ici](https://github.com/LeoDeLaFuente/Slam_Arduino_Bot/blob/master/documentation/Slam_arduino_bot_mi-parcours.pdf). Elle nous a permit de rédéfinir notre planning et de faire le point sur notre projet.
  
  - #### Fixation des moteurs+équerres sur le support. 
- J ai rivetté les equerres sur le support, ce qui m'a permis de cabler l'ensemble moturs, pont en H, arduino et batterie sur le robot. 
+ J ai rivetté les equerres sur le support, ce qui m'a permis de cabler l'ensemble moturs, pont en H, arduino et batterie sur le robot.
+ <br>
  <img src="/documentation/Images/robot_branche.jpg" alt="photo du robot" height=200/>
  <img src="/documentation/Images/robot_branche2.jpg" alt="photo du robot" height=200/>
  <br>
