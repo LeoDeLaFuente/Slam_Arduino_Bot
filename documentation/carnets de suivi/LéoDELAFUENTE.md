@@ -108,7 +108,7 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  ## fab lab et travail personnel du 6 Avril
  
  - #### Création de la dernière pièce manquante pour le robot : une pièce en bois se situant entre le support et la roue folle pour que le dessus du robot soir de niveau.
- <img src="/documentation/Images/piece_bois.jpg" alt="pièce en bois réalisé" height=300px />
+ <img src="/documentation/Images/piece_bois.jpg" alt="pièce en bois réalisé" rotate="260" height=300px />
  
  - #### Dévellopement du code sur le robot
  Le robot peut maintenant être commandé pou se déplacer en ligne droite sur une certaine distance, reculer, et tourner sur lui même dans les sens horaire et anti-horaire. [Cette vidéo montre les déplacements pouvants être effectués](https://youtu.be/h0HItliRpBA). On remarque que le robot ne se déplace pas en ligne bien droite, et que les tours sur lui même ne respectent pas bien les angles demandés (180 degrés puis 360 degrés). Cela est dû au fait que les moteurs ne tournent pas à la même vitesse. Il faut donc améliorer cela.
