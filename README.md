@@ -72,4 +72,4 @@ Une présentation a été réalisé le 5 Avril devant nos professeurs pour faire
 
 <br>
 
-[Celle-ci est visible ici](Présentation power point du projet](/documentation/Slam_arduino_bot_mi-parcours.pdf)
+[Celle-ci est visible ici](/documentation/Slam_arduino_bot_mi-parcours.pdf)
