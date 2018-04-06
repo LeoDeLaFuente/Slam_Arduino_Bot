@@ -89,8 +89,7 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  - #### Fixation des pièces avec rivets
  Après avoir acheté les rivets, je suis allé au fab lab pour fixer les moteurs aux equerres graçe aux pièces réalisé le 20 Mars. J ai aussi commencé à percer le support pour assembler les équerres au support.
 
- ![Piece moteur equerre assemblé](/documentation/Images/29995243_1791994864186311_792137066_o.jpg)  
-   
+ <img src="/documentation/Images/29995243_1791994864186311_792137066_o.jpg" height="200" alt="assemblage equerre et moteur" /> 
  
 
  
