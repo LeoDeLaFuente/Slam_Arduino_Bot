@@ -1,8 +1,5 @@
 
-//Code by Reichenstein7 (thejamerson.com)
 
-//Keyboard Controls:
-//
 // 1 -Motor 1 Left
 // 2 -Motor 1 Stop
 // 3 -Motor 1 Right
@@ -23,15 +20,16 @@ int dir1PinB = 6;
 int dir2PinB = 7;
 int speedPinB = 10; // Needs to be a PWM pin to be able to control motor speed
 
-
-
-int inByte_A = 0;
+//Déclaration des variables permettant la commandes des moteurs A et B
+int inByte_A = 0; 
 int inByte_B = 0;
 
+// variables de comptage des roues codeuses
 unsigned int tick_codeuse_A = 0; 
 unsigned int tick_codeuse_B = 0; 
 
-int avancer_tick=0;
+int avancer_cm=150; // variable du nombre de centimètre à avancer
+int avancer_tick=0; // variable du nombre de "tick" à effectuer
 
 int speed_B;
 int speed_A;
@@ -56,7 +54,6 @@ attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
 //inByte_A = '1';
 //inByte_B = '4';
 
-int avancer_cm=150;
 
 //avancer_tick=convert(avancer_cm);
 
