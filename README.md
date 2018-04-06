@@ -69,4 +69,5 @@ L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur
 Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
 
 Une présentation a été réalisé le 5 Avril devant nos professeurs pour faire un point sur notre projet. 
+<br>
 [Celle-ci est visible ici](Présentation power point du projet](/documentation/Slam_arduino_bot_mi-parcours.pdf)
