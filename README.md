@@ -18,7 +18,7 @@ Ce projet est réalisé dans le cadre de la formation de prépa intégrée de Po
 
 ![Schéma projet](/documentation/Images/Schéma_wifi_lora.jpg)
 
-[liste du materiel](/documentation/liste_du_materiel.md)
+[liste du materiel](/documentation/liste_du_materiel.md) 
 
 [Présentation power point du projet](/documentation/Slam_arduino_bot_presentation.pdf)
 
@@ -68,4 +68,5 @@ L'assemblage du robot est quasiment fini. Il manque la fixation des equerres sur
 </br>
 Le traitement avec un algorithme de SLAM se fera dans un second temps après avoir réalisé les communications RF.
 
-Une présentation a été réalisé le 5 Avril devant nos professeurs pour faire un point sur notre projet. [Celle-ci est visible ici]([Présentation power point du projet](/documentation/Slam_arduino_bot_mi-parcours.pdf))
+Une présentation a été réalisé le 5 Avril devant nos professeurs pour faire un point sur notre projet. 
+[Celle-ci est visible ici](Présentation power point du projet](/documentation/Slam_arduino_bot_mi-parcours.pdf)
