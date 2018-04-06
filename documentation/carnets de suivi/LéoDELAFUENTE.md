@@ -97,7 +97,7 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  - #### Présentation de mi-parcous auprès de nos professeur. 
  [Celle-ci est visible ici](https://github.com/LeoDeLaFuente/Slam_Arduino_Bot/blob/master/documentation/Slam_arduino_bot_mi-parcours.pdf). Elle nous a permit de rédéfinir notre planning et de faire le point sur notre projet.
  
- -#### Fixation des moteurs+équerres sur le support. 
+ - #### Fixation des moteurs+équerres sur le support. 
  J ai rivetté les equerres sur le support, ce qui m'a permis de placer l'arduino et la batterie et de recabler le tout. 
  
  [Voici la vidéo du premier branchement](https://youtu.be/iydBeL7KhAE).
