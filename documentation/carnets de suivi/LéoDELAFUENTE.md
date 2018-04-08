@@ -125,8 +125,8 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  Pour essayer "d'échapper" à l'asservissement en vitesse necessaire pour que les deux moteurs tournent à la même vitesse, j ai essayé de voire si le frottement des les moteurs suivait une loi linéaire, et si un coefficient e proportionnalité pouvait être trouvé entre les deux moteurs.
  Malheureusement ce paramètre ne semble pas linéaire, et je n'ai pas trouvé de coefficient de proportionnalité entre les vitesse de mes deux moteurs.
  <img src="/documentation/Images/graph_frottement.PNG" alt="graph du temps pour réalisé 1000ticks en fonction de la vitesse demandé des deux moteurs" height=300px />  
- [Voici la feuille excel qui a produit le graph](/documentation/tableur_frottements.xlsx)
- Le code ayant permit de faire ces calcul est un code modifié du code "robot réel" et nommé "calcul_frottements_moteurs [situé  ici](/code/autres_codes_arduino)
+ [Voici la feuille excel qui a produit le graph](/documentation/tableur_frottements.xlsx)  
+ Le code ayant permit de faire ces calcul est un code modifié du code "robot réel" et nommé "calcul_frottements_moteurs [situé  ici](/code/autres_codes_arduino). Les mesures ont été doublé pour chaque valeur de vitesse et moteur pour avoir un résultat plus précis.
 
  
 
