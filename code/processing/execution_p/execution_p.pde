@@ -1,28 +1,32 @@
 import processing.serial.*; // importe la librairie série processing
-import java.util.*;
 Serial  myPort; // Création objet désignant le port série
 int resolution = 2;
 float zoom = 1;
-LinkedList<Donnee> data;
-LinkedList<Donnee> enAtt;
+ArrayList<float[]> data;
+ArrayList<float[]> stock;
+
 int decallageV = 0;
 int decallageH = 0;
 
-
+boolean pass = true;
+boolean debut = false;
 /* Initialisation du programme, */
 void setup(){
-  for (String name : Serial.list()){
-    println(name);
-  };
   background(0); 
   size(1200,700); 
-  String portName = Serial.list()[3]; 
+  String[] serialPorts = Serial.list();
+  printArray(serialPorts);
+  String portName = serialPorts[32]; 
   println(portName);
-  myPort = new Serial(this, portName, 19200); //myPort = new Serial(this, "/dev/ttyACM0", 9600);
+  myPort = new Serial(this, portName, 115200);
+  myPort.bufferUntil('\n');
   frameRate(30); 
-  data = new LinkedList<Donnee>();
-  enAtt = new LinkedList<Donnee>();
-
+  data = new ArrayList<float[]>();
+  stock = new ArrayList<float[]>();
+  println("attention");
+  delay(1000);  
+  println("HOP Départ !"); 
+  debut = true;
 }
  
  
@@ -43,30 +47,26 @@ void boussole(){
 }
 
 void pointage(){
-   for(Donnee d : data){
-     //println("marche");
-     float positionX = (width/(2*zoom) + d.getPosX())*zoom+decallageH;
-     float positionY = (height/(2*zoom) - d.getPosY())*zoom+decallageV;
-     float landmarkX = (width/(2*zoom) + d.getLandX())*zoom+decallageH;
-     float landmarkY = (height/(2*zoom) - d.getLandY())*zoom+decallageV;
-     fill(255);
-     stroke(#FFFFFF);
-     rect(landmarkX,landmarkY,resolution, resolution);
-     stroke(#7D7D7D);
-     line(positionX,positionY,landmarkX,landmarkY);
-     fleche(positionX, positionY, d.getOrientation());
+  if(!(data.isEmpty())){
+    for(float[] d : data){
+       float positionX = (width/(2*zoom) + d[2])*zoom+decallageH;
+       float positionY = (height/(2*zoom) - d[3])*zoom+decallageV;
+       float landmarkX = (width/(2*zoom) + d[0])*zoom+decallageH;
+       float landmarkY = (height/(2*zoom) - d[1])*zoom+decallageV;
+       fill(255);
+       stroke(#FFFFFF);
+       rect(landmarkX,landmarkY,resolution, resolution);
+       stroke(#7D7D7D);
+       line(positionX,positionY,landmarkX,landmarkY);
+       fleche(positionX, positionY, d[4]);
+    }
   }
-  if(enAtt.size() != 0){
-    ajoutData();
-  }
+  pass = false;
+  data.addAll(stock);
+  stock = new ArrayList<float[]>();
+  pass = true;
 }
 
-void ajoutData(){
-  for(Donnee d : enAtt){
-    data.push(d);
-  }
-  enAtt.clear();
-}
 void fleche(float px, float py,float orientation){
   stroke(#FF1500);
   line(px,py,px+15*cos(orientation),py+15*sin(orientation));
@@ -80,11 +80,22 @@ void fleche(float px, float py,float orientation){
 
 //---------------- Fonctions de gestion de réception au port série --------------
 void serialEvent (Serial myPort){ 
-  String inString = myPort.readStringUntil('\n'); // chaine stockant la chaîne reçue sur le port Série
-  if (inString != null){// si la chaine recue n'est pas vide
-    //ajouter un élément au tableau de données.
-      //println(inString);
-      enAtt.push(new Donnee(inString));
+  if(debut){
+    String inString = myPort.readStringUntil('\n'); // chaine stockant la chaîne reçue sur le port Série
+    if (inString != null){ // si la chaine recue n'est pas vide
+      println(inString);
+      float posX = 0;
+      float posY = 0;
+      float orientation =float(30/180)*PI;
+      String [] spl = inString.split(";");
+      int distance =  Integer.parseInt(spl[0]);
+      float ang =  ang = float(spl[1])/180*PI;
+      float pntX = posX + cos(ang+orientation)*distance;
+      float pntY = posY + sin(ang+orientation)*distance;
+      float [] arr = {pntX, pntY, posX, posY, orientation};
+      while(!pass);
+      stock.add(arr);
+    }
   }
 } 
 
@@ -110,12 +121,16 @@ void keyTyped() {
 
 
 
+
+
 //---------------- Classe des données --------------
+
+/*
 class Donnee { 
   float posX, posY, distance, orientation, ang;
   float[] landmark = new float[2];
   
-/*on initialise la construction de chaque objet en traitant le String reçu par le port série, via serialEvent */
+//on initialise la construction de chaque objet en traitant le String reçu par le port série, via serialEvent 
   Donnee (String ligne) {
     
     String[] splity = split(ligne,';');
@@ -158,3 +173,4 @@ class Donnee {
     return landmark[1];
   }
 } 
+*/
