@@ -34,4 +34,5 @@ void loop()
             }
         }
     }
+    Serial.println("passé");
 }

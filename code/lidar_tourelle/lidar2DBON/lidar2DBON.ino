@@ -17,18 +17,19 @@ void setup(){
     servoY.attach(3);
     
     servoX.write(30);
-    servoY.write(99);
+    servoY.write(97);
+    delay(1000);
 }
 
 void loop(){
 
   distance = mesure();
-  delay(50);
-  String res = String(distance)+";"+String(angle);
+  delay(10);
+  String res = String(distance)+";"+String(angle)+";";
   Serial.println(res);
 
   servoX.write(angle);
-  delay(50);
+  delay(40);
   if(montee){
      if(angle<=160){
       angle ++;
