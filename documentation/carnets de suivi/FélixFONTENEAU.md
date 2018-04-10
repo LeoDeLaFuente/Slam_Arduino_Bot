@@ -144,8 +144,20 @@ Tâches effectuées :
   
   - Mais avant tout ce Lidar est bien mieux adapté à notre projet.
   
-  - Il reste maintenant à bien adapter le fonctionnement de ce lidar au code déjà existant. Puis il fut que j'attaque les communications RF.
+  - Il reste maintenant à bien adapter le fonctionnement de ce lidar au code déjà existant. Puis il faut que j'attaque les communications RF.
   
   
+   ***
   
+## Séance du 05 Avril 
+
+  - Présentation de l'avancement de notre projet au reste du groupe. La voici : <a href="documentation/Slam_arduino_bot_mi-parcours.pdf" > ici </a>.
+  
+  - Problèmes de mesure avec le lidar. Il y a des sursaut avec le lidar de plus l'arduino mega a parfois du mal à gérer le servos moteurs aisi que les mesures.
+  
+ ***
+  
+## Travail personel entre les séances 
+
+  - Début de construction du module RF reliant le robot à l'ordinateur. Pour cela nous allons changer un peu le le schéma de notre projet. 
 
