@@ -23,7 +23,7 @@ void setup(){
 void loop(){
 
   distance = mesure();
-  delay(10);
+  delay(100);
   String res = String(distance);
   Serial.println(res);
 
@@ -32,9 +32,7 @@ void loop(){
 
 unsigned int mesure(){
     unsigned int t2;
-    while( !Serial1.available()>=9){}
-    if(Serial1.available()>=9){
-      
+    while( Serial1.available()>=9){
       if((0x59 == Serial1.read()) && (0x59 == Serial1.read())) //Byte1 & Byte2
       {
           unsigned int t1 = Serial1.read(); //Byte3
@@ -42,8 +40,8 @@ unsigned int mesure(){
           
           t2 <<= 8;
           t2 += t1;
-          Serial.print(t2);
-  
+          //Serial.print(t2);
+            
           Serial1.read(); //Byte5
           Serial1.read(); //Byte6
           
@@ -51,7 +49,9 @@ unsigned int mesure(){
           { 
               Serial1.read(); ////Byte7,8,9
           }
+          //Serial.println("miaou");
       }
-      return t2;
     }
+  return t2;
+
 }

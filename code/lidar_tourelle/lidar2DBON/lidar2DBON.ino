@@ -23,12 +23,12 @@ void setup(){
 void loop(){
 
   distance = mesure();
-  delay(10);
+  delay(50);
   String res = String(distance)+";"+String(angle);
   Serial.println(res);
 
   servoX.write(angle);
-  delay(10);
+  delay(50);
   if(montee){
      if(angle<=160){
       angle ++;
@@ -46,11 +46,8 @@ void loop(){
 
 unsigned int mesure(){
     unsigned int t2;
-    while( !Serial1.available()>=9){}
-    if(Serial1.available()>=9){
-      
-      if((0x59 == Serial1.read()) && (0x59 == Serial1.read())) //Byte1 & Byte2
-      {
+    while( Serial1.available()>=9){  
+      if((0x59 == Serial1.read()) && (0x59 == Serial1.read())){ //Byte1 & Byte2
           unsigned int t1 = Serial1.read(); //Byte3
           t2 = Serial1.read(); //Byte4
           
@@ -61,11 +58,11 @@ unsigned int mesure(){
           Serial1.read(); //Byte5
           Serial1.read(); //Byte6
           
-          for(int i=0; i<3; i++) 
-          { 
+          for(int i=0; i<3; i++) { 
               Serial1.read(); ////Byte7,8,9
           }
       }
-      return t2;
     }
+  return t2;
+
 }
