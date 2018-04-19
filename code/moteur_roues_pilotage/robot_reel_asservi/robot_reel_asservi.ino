@@ -89,7 +89,9 @@ attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
 timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
 
-
+ avancer_tick=action(1, 50);
+  deplacement();
+  delay(5000);
 
 
 
@@ -102,15 +104,13 @@ timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 }
 
 void loop() {
-     avancer_tick=action(1, 50);
-  deplacement();
-  delay(5000);
+    
 
 }
 
-//void deplacement(){
+void deplacement(){
    while(true){
-    delay(100);
+    
     //action();
     Serial.println(avancer_tick);
     
