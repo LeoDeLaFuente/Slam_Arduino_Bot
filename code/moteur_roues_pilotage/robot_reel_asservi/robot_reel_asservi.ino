@@ -89,9 +89,9 @@ attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
 timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
 
- avancer_tick=action(1, 50);
-  deplacement();
-  delay(5000);
+// avancer_tick=action(1, 50);
+//  deplacement();
+//  delay(5000);
 
 
 
@@ -104,7 +104,7 @@ timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 }
 
 void loop() {
-    
+    timer.run();
 
 }
 
@@ -372,7 +372,7 @@ float action(int commande, int dist){
 /* Interruption pour calcul du P */
 void asservissement_A()
 {
-  Serial.println("salope");
+  
   // Calcul de l'erreur
   int frequence_codeuse_A = frequence_echantillonnage*tick_codeuse_vit_A; //100*tick_codeuse
   float vit_roue_tour_sec_A = (float)frequence_codeuse_A/(float)tick_par_tour_codeuse_A/(float)rapport_reducteur;    //(100*tick_codeuse)/32/19 
@@ -386,8 +386,7 @@ void asservissement_A()
 
   // P : calcul de la commande
   speed_A = kp*erreur_A + ki*somme_erreur_A + kd*delta_erreur_A;  //somme des tois erreurs
-  //String s = String(speed_A);
- // Serial.print(vitMoteur + "  ");
+  
   // Normalisation et contrôle du moteur
   if (vitMoteur_A > 255) {
     speed_A = 255;  // sachant que l'on est branché sur un pont en H L293D
@@ -416,7 +415,7 @@ void asservissement_A()
 
 }
 void test(){
-  Serial.println("salope");
+  Serial.println("test");
   }
 
 
