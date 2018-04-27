@@ -11,6 +11,12 @@ const char* password = "0007CBBCFECA";
 
 const char* ssidProcessing = "192.168.0.23";
 
+const int port = 8080;
+
+   
+WiFiClient servProcessing;
+
+
 
 SSD1306 display(0x3c, 4, 15); 
 
@@ -44,7 +50,7 @@ void setup(){
     WiFi.begin(ssid, password);
     //WiFi.begin(ssid1);
     while (WiFi.status() != WL_CONNECTED) {
-        delay(250);
+        delay(50);
         Serial.print(".");
         display.drawString(10,0,"...");
         display.display();
@@ -63,15 +69,9 @@ void setup(){
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
     delay(300);
-}
 
-int value = 0;
+    //=== début de la connexion vers le server processing ===//
 
-void loop()
-{
-    delay(3000);
-    ++value;
-    
     display.clear();
     display.drawString(0,0,"connecting to "+String(ssidProcessing));
     display.display();
@@ -79,25 +79,48 @@ void loop()
     Serial.println(ssidProcessing);
 
     // Use WiFiClient class to create TCP connections
-    WiFiClient servProcessing;
-    const int port = 8080;
+    connexion();
+}
 
-    //si la connexion echoue
-    if (!servProcessing.connect(ssidProcessing, port)) {
-        Serial.println("connection failed");
-        display.clear();
-        display.drawString(0,0,"connection failed");
-        display.display();
+
+void loop(){
+  
+    
+    unsigned long t1 = millis();
+    servProcessing.print("début de la loop");
+    unsigned long timeout = millis();
+    while (servProcessing.available() == 0) {
+        if (millis() - timeout > 5000) {
+            Serial.println(">>> servProcessing Timeout !");
+            servProcessing.stop();
+            connexion();
+        }
+    }
+
+    // Read all the lines of the reply from server and print them to Serial
+    while(servProcessing.available()) {
+        String line = servProcessing.readStringUntil('\r');
+        ecrire(line);
+    }
+
+    unsigned long t = millis() - t1;
+    ecrire(String(t));
+
+}
+
+void connexion(){
+      if (!servProcessing.connect(ssidProcessing, port)) {
+        ecrire("connexion fail");
         return;
     }
 
 
     //ici on envoie des données à processing
-    servProcessing.print("miaou");
+    servProcessing.print("début de la communication avec esp32");
     unsigned long timeout = millis();
     while (servProcessing.available() == 0) {
         if (millis() - timeout > 5000) {
-            Serial.println(">>> servProcessing Timeout !");
+            ecrire(">>> servProcessing Timeout !");
             servProcessing.stop();
             return;
         }
@@ -108,9 +131,11 @@ void loop()
         String line = servProcessing.readStringUntil('\r');
         Serial.print(line);
     }
-
-    Serial.println();
-    Serial.println("closing connection");
 }
 
-
+void ecrire(String s){
+  Serial.println(s);
+  display.clear();
+  display.drawString(0,0,s);
+  display.display();
+}
