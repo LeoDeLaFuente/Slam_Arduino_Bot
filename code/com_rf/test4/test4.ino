@@ -5,11 +5,11 @@
 #include "SSD1306.h"
 
 
+const char* ssid1 = "blabla";
+const char* ssid     = "freebox_LECVSF";
+const char* password = "0007CBBCFECA";
 
-const char* ssid     = "iPhone de Félix";
-const char* password = "miaoumiaou666:!";
-
-const char* host = "172.20.10.5";
+const char* ssidProcessing = "192.168.0.23";
 
 
 SSD1306 display(0x3c, 4, 15); 
@@ -42,7 +42,7 @@ void setup(){
     Serial.println(ssid);
 
     WiFi.begin(ssid, password);
-
+    //WiFi.begin(ssid1);
     while (WiFi.status() != WL_CONNECTED) {
         delay(250);
         Serial.print(".");
@@ -73,15 +73,17 @@ void loop()
     ++value;
     
     display.clear();
-    display.drawString(0,0,"connecting to "+String(host));
+    display.drawString(0,0,"connecting to "+String(ssidProcessing));
     display.display();
     Serial.print("connecting to ");
-    Serial.println(host);
+    Serial.println(ssidProcessing);
 
     // Use WiFiClient class to create TCP connections
-    WiFiClient client;
-    const int port = 6666;
-    if (!client.connect(host, port)) {
+    WiFiClient servProcessing;
+    const int port = 8080;
+
+    //si la connexion echoue
+    if (!servProcessing.connect(ssidProcessing, port)) {
         Serial.println("connection failed");
         display.clear();
         display.drawString(0,0,"connection failed");
@@ -90,20 +92,20 @@ void loop()
     }
 
 
-    // This will send the request to the server
-    client.print("miaou");
+    //ici on envoie des données à processing
+    servProcessing.print("miaou");
     unsigned long timeout = millis();
-    while (client.available() == 0) {
+    while (servProcessing.available() == 0) {
         if (millis() - timeout > 5000) {
-            Serial.println(">>> Client Timeout !");
-            client.stop();
+            Serial.println(">>> servProcessing Timeout !");
+            servProcessing.stop();
             return;
         }
     }
 
     // Read all the lines of the reply from server and print them to Serial
-    while(client.available()) {
-        String line = client.readStringUntil('\r');
+    while(servProcessing.available()) {
+        String line = servProcessing.readStringUntil('\r');
         Serial.print(line);
     }
 
