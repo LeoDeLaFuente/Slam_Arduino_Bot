@@ -17,8 +17,8 @@ const int tick_par_tour_codeuse = 4;  //64 tick sur deux capteurs hall, ici on a
 
 
 //consigne en tour/s
-float consigne_moteur_A = 1; //  Consigne nombre de tours de roue par seconde
-float consigne_moteur_B = 1;
+float consigne_moteur_A = 0.5; //  Consigne nombre de tours de roue par seconde
+float consigne_moteur_B = 0.5;
 
 // init calculs asservissement PID
  float erreur_precedente_A = consigne_moteur_A; // (en tour/s)
@@ -58,18 +58,18 @@ int inByte_A = 0;
 int inByte_B = 0;
 
 // variables de comptage des roues codeuses
-  unsigned int tick_codeuse_A = 0; 
+ unsigned int tick_codeuse_A = 0; 
  unsigned int tick_codeuse_B = 0; 
 
-int avancer_cm=250; // variable du nombre de centimètre à avancer
+int avancer_cm=0; // variable du nombre de centimètre à avancer
 int avancer_tick=0; // variable du nombre de "tick" à effectuer
 
 int speed_B;
  int speed_A;
 
-float entraxe_roue=18.5; //entraxe de nos roues :18.5cm
-float perim=entraxe_roue*3.14; //perimetre du cercle parcourue par les roues lors d'un tour du robot dur lui même
-float diametre_roue= 6.4 ;//diametre de nos roue : 6.4cm
+float entraxe_roue=19.60; //entraxe de nos roues :18.9cm
+float perim=entraxe_roue*3.14159; //perimetre du cercle parcourue par les roues lors d'un tour du robot dur lui même
+float diametre_roue= 6.5 ;//diametre de nos roue : 6.5cm
 
 
 
@@ -90,7 +90,7 @@ attachInterrupt(digitalPinToInterrupt(2), compteur_A, CHANGE); // Interruption s
 attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
 
 
-
+Serial.println(perim);
 
 timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
@@ -109,14 +109,23 @@ timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
 void loop() {
     timer.run();
+    
     if (etape==1 and ok){
-      avancer_tick=action(1,10);
-      ok=false;
-    }else if (etape==2 and ok){
-      delay(1000);
+      delay(2000);
       reinitialise();
-      avancer_tick=action(3,360);
-    }
+      avancer_tick=action(4,1440);
+    }else if (etape==2 and ok){
+      
+      delay(2000);
+      reinitialise();
+      avancer_tick=action(3,1440);
+      
+      
+    }else if ( etape == 3 and ok){
+      
+    }else if (etape == 4 and ok){
+      
+      }
 
 }
 
@@ -125,15 +134,19 @@ void reinitialise(){
    tick_codeuse_vit_B = 0; 
    vitMoteur_A = 0;   // Commande du moteur
    vitMoteur_B = 0;
-  consigne_moteur_A = 1; //  Consigne nombre de tours de roue par seconde
-  consigne_moteur_B = 1;
+  consigne_moteur_A = 0; //  Consigne nombre de tours de roue par seconde
+  consigne_moteur_B = 0;
 
 
  erreur_precedente_A = consigne_moteur_A; // (en tour/s)
  erreur_precedente_B = consigne_moteur_B;
   somme_erreur_A = 0;
   somme_erreur_B = 0;
-  
+  ok=false;
+      fin_B=false;
+      fin_A=false;
+ timer.restartTimer(0);
+
   }
 
 void deplacement(){
@@ -142,20 +155,7 @@ void deplacement(){
       
       
       
-//      if(tick_codeuse_A>avancer_tick and tick_codeuse_B>avancer_tick){
-//        // on s'assure que tous les moteurs soient éteints
-//        
-//        analogWrite(speedPinA, 0);
-//        digitalWrite(dir1PinA, LOW);
-//        digitalWrite(dir2PinA, HIGH);
-//        
-//        analogWrite(speedPinB, 0);
-//        digitalWrite(dir1PinB, LOW);
-//        digitalWrite(dir2PinB, HIGH);
-//        
-//        
-//        
-//      }
+
       
       Serial.print(tick_codeuse_A);
       Serial.print(" | ");
@@ -294,8 +294,8 @@ float action(int commande, int dist){
       tick_codeuse_B = 0; 
 
       
-      consigne_moteur_B = 1;
-      consigne_moteur_A = 1; 
+      consigne_moteur_B = 0.5;
+      consigne_moteur_A = 0.5; 
 
       //avancer_tick=convert(dist);
      
@@ -311,8 +311,8 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      consigne_moteur_B = 1;
-      consigne_moteur_A = 1;
+      consigne_moteur_B = 0.5;
+      consigne_moteur_A = 0.5;
 
       //avancer_tick=convert(dist);
       
@@ -330,8 +330,8 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      consigne_moteur_B = 1;
-      consigne_moteur_A = 1;
+      consigne_moteur_B = 0.5;
+      consigne_moteur_A = 0.5;
       
       
       return convert((dist*perim)/360);
@@ -346,8 +346,8 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      consigne_moteur_B = 1;
-      consigne_moteur_A = 1;
+      consigne_moteur_B = 0.5;
+      consigne_moteur_A = 0.5;
 
       
       return convert((dist*perim)/360);
@@ -422,18 +422,14 @@ void asservissement_A(){
     }
   }else {
     fin_B=true;
-    }
-    if(fin_A and fin_B){
-      etape=etape+1;
-      ok=true;
-      }
+  }
+  if(fin_A and fin_B){
+     etape=etape+1;
+     ok=true;
+  }
+  Serial.println(speed_B);
+  deplacement();
   
-  
-    
-  
-   
-  
-    deplacement();
   
 }
 
