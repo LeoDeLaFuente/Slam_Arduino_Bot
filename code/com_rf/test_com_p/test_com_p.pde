@@ -1,6 +1,6 @@
 
 import processing.net.*;
-
+import java.net.Inet4Address ;
 int port = 6666; //Sever TCP-Port number
 
 Server server;
@@ -12,6 +12,11 @@ void setup(){
   //println(this);
   noStroke(); 
   colorMode(RGB, 1);
+  
+  //String[] ip = loadStrings("http://" + "icanhazip.com/");
+  //println(ip[0]);
+  
+  
 }
 
 void draw(){
@@ -21,7 +26,7 @@ void draw(){
       client.write("\n");
       if((strdata=client.readString()) != null){ 
           strdata=trim(strdata);
-//        println(strdata);
+          println(strdata);
       }
   }
   delay(10);
