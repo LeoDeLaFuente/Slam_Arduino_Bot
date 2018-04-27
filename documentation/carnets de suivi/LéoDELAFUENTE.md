@@ -128,6 +128,10 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
  [Voici la feuille excel qui a produit le graph](/documentation/tableur_frottements.xlsx)  
  Le code ayant permit de faire ces calcul est un code modifié du code "robot réel" et nommé "calcul_frottements_moteurs [situé  ici](/code/autres_codes_arduino). Les mesures ont été doublé pour chaque valeur de vitesse et moteur pour avoir un résultat plus précis.
 
- 
+## Travail personnel du
+- #### travail sur l'asservssement
+## Travail personel du 27 Avril
 
- 
+- #### Compilation des codes asservisseent et robot_reel. Le robot ne reste stoujours pas prècis a cause du fait que le support du robot est légèrement décalé, et que les roues ne sont pas bien rondes.
+Un bug est apparu sur la carte arduino : avrdude: stk500_recv(): programmer is not responding, que je ne suis pas arrive, même en réinstallant l'ide arduino. Jai donc continué à travailler avec la carte de Félix, mais après une quinzaine de téléversement, cette seconde carte à rencontré le même problème.
+
