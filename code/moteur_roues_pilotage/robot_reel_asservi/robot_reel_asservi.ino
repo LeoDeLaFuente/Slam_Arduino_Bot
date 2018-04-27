@@ -6,28 +6,36 @@ SimpleTimer timer;    // Timer pour échantillonnage
 
 //###########################
 //##asservissement vitesse###
-volatile unsigned int tick_codeuse_vit_A = 0;     // Compteur de tick de la codeuse
-volatile int vitMoteur_A = 0;                       // Commande du moteur
+ unsigned int tick_codeuse_vit_A = 0;  // Compteur de tick de la codeuse
+unsigned int tick_codeuse_vit_B = 0; 
+ int vitMoteur_A = 0;   // Commande du moteur
+ int vitMoteur_B = 0;
 const int frequence_echantillonnage = 100;  // Fréquence d'exécution de l'asservissement
 const int rapport_reducteur = 80;          // Rapport entre le nombre de tours de l'arbre moteur et de la roue
-const int tick_par_tour_codeuse_A = 4;  //64 tick sur deux capteurs hall, ici on a pris un seul capteur
+const int tick_par_tour_codeuse = 4;  //64 tick sur deux capteurs hall, ici on a pris un seul capteur
 
 
 
 //consigne en tour/s
-float consigne_moteur_A = 2; //  Consigne nombre de tours de roue par seconde
+float consigne_moteur_A = 1; //  Consigne nombre de tours de roue par seconde
+float consigne_moteur_B = 1;
 
 // init calculs asservissement PID
-volatile float erreur_precedente_A = consigne_moteur_A; // (en tour/s)
-volatile float somme_erreur_A = 0;
+ float erreur_precedente_A = consigne_moteur_A; // (en tour/s)
+ float erreur_precedente_B = consigne_moteur_B;
+float somme_erreur_A = 0;
+float somme_erreur_B = 0;
 
 //Definition des constantes du correcteur PID
 float kp =120;// 150          // Coefficient proportionnel    choisis par tatonnement sur le moniteur. Ce sont les valeurs qui donnaient les meilleures performances
 float ki = 40;// 25      // Coefficient intégrateur
 float kd = 45;// 45           // Coefficient dérivateur
 
+int etape = 1;
 
-
+boolean fin_A=false;
+boolean fin_B=false;
+boolean ok=true;
 
 
  
@@ -50,14 +58,14 @@ int inByte_A = 0;
 int inByte_B = 0;
 
 // variables de comptage des roues codeuses
-volatile unsigned int tick_codeuse_A = 0; 
-volatile unsigned int tick_codeuse_B = 0; 
+  unsigned int tick_codeuse_A = 0; 
+ unsigned int tick_codeuse_B = 0; 
 
 int avancer_cm=250; // variable du nombre de centimètre à avancer
 int avancer_tick=0; // variable du nombre de "tick" à effectuer
 
-volatile int speed_B;
-volatile int speed_A;
+int speed_B;
+ int speed_A;
 
 float entraxe_roue=18.5; //entraxe de nos roues :18.5cm
 float perim=entraxe_roue*3.14; //perimetre du cercle parcourue par les roues lors d'un tour du robot dur lui même
@@ -82,16 +90,12 @@ attachInterrupt(digitalPinToInterrupt(2), compteur_A, CHANGE); // Interruption s
 attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
 
 
-//inByte_A = '1';
-//inByte_B = '4';
-//
+
 
 timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
-timer.run();
- avancer_tick=action(1, 50);
-  deplacement();
-  delay(5000);
+
+
 
 
 
@@ -104,114 +108,100 @@ timer.run();
 }
 
 void loop() {
-    
-    delay(10);
+    timer.run();
+    if (etape==1 and ok){
+      avancer_tick=action(1,10);
+      ok=false;
+    }else if (etape==2 and ok){
+      delay(1000);
+      reinitialise();
+      avancer_tick=action(3,360);
+    }
 
 }
 
+void reinitialise(){
+   tick_codeuse_vit_A = 0;  // Compteur de tick de la codeuse
+   tick_codeuse_vit_B = 0; 
+   vitMoteur_A = 0;   // Commande du moteur
+   vitMoteur_B = 0;
+  consigne_moteur_A = 1; //  Consigne nombre de tours de roue par seconde
+  consigne_moteur_B = 1;
+
+
+ erreur_precedente_A = consigne_moteur_A; // (en tour/s)
+ erreur_precedente_B = consigne_moteur_B;
+  somme_erreur_A = 0;
+  somme_erreur_B = 0;
+  
+  }
+
 void deplacement(){
-   while(true){
-    
-    //action();
-    Serial.println(avancer_tick);
-    
-    
-    // Initialize the Serial interface:
-    
-    
+   
+   
       
       
-      if(avancer_tick-tick_codeuse_A<250){
-        consigne_moteur_A=0.5;
-        //speed_A=20;
-      }
-      if(avancer_tick-tick_codeuse_B<250){
-        speed_B=20;
-      }
-      if(tick_codeuse_A>avancer_tick and tick_codeuse_B>avancer_tick){
-        // on s'assure que tous les moteurs soient éteints
-        analogWrite(speedPinA, 0);
-        digitalWrite(dir1PinA, LOW);
-        digitalWrite(dir2PinA, HIGH);
-        
-        analogWrite(speedPinB, 0);
-        digitalWrite(dir1PinB, LOW);
-        digitalWrite(dir2PinB, HIGH);
-        
-        
-        break;
-      }
+      
+//      if(tick_codeuse_A>avancer_tick and tick_codeuse_B>avancer_tick){
+//        // on s'assure que tous les moteurs soient éteints
+//        
+//        analogWrite(speedPinA, 0);
+//        digitalWrite(dir1PinA, LOW);
+//        digitalWrite(dir2PinA, HIGH);
+//        
+//        analogWrite(speedPinB, 0);
+//        digitalWrite(dir1PinB, LOW);
+//        digitalWrite(dir2PinB, HIGH);
+//        
+//        
+//        
+//      }
       
       Serial.print(tick_codeuse_A);
       Serial.print(" | ");
       Serial.println(tick_codeuse_B);
     
       
-     //Serial.println(avancer_tick);
+     
     if(tick_codeuse_A<avancer_tick){
-      Serial.println(speed_A);
+      
+      
       switch (inByte_A) {
       
       //______________Motor 1______________
       
-      case '1': // Fait avancer les deux moteurs dans les sens de la marche
+      case '1': 
+      
       analogWrite(speedPinA, speed_A);//Sets speed variable via PWM 
-      
-    
-      
       digitalWrite(dir1PinA, LOW);
       digitalWrite(dir2PinA, HIGH);
+  
       
-      Serial.println(speed_A);
-      //Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
-      //Serial.println("    "); // Creates a blank line printed on the serial monitor
+      
+      
       break;
       
       case '2': // Motor 1 Stop (Freespin)
       analogWrite(speedPinA, 0);
       digitalWrite(dir1PinA, LOW);
       digitalWrite(dir2PinA, HIGH);
-      Serial.println("Motor 1 Stop");
-      Serial.println("    ");
+      
       break;
       
       case '3': // Motor 1 Reverse
       analogWrite(speedPinA, speed_A);
       digitalWrite(dir1PinA, HIGH);
       digitalWrite(dir2PinA, LOW);
-      Serial.println("Motor 1 Reverse");
-      Serial.println("    ");
+      
       break;
       
-      //______________Motor 2______________
-      
-      case '4': // Motor 2 Forward
-      
-      
-      Serial.println("Motor 2 Forward");
-      Serial.println("    ");
-      break;
-      
-      case '5': // Motor 1 Stop (Freespin)
-      analogWrite(speedPinB, 0);
-      digitalWrite(dir1PinB, LOW);
-      digitalWrite(dir2PinB, HIGH);
-      Serial.println("Motor 2 Stop");
-      Serial.println("    ");
-      break;
-      
-      case '6': // Motor 2 Reverse
-      analogWrite(speedPinB, speed_B);
-      digitalWrite(dir1PinB, HIGH);
-      digitalWrite(dir2PinB, LOW);
-      Serial.println("Motor 2 Reverse");
-      Serial.println("    ");
-      break;
+     
       
       default:
       // turn all the connections off if an unmapped key is pressed:
       for (int thisPin = 2; thisPin < 11; thisPin++) {
       digitalWrite(thisPin, LOW);
+      
       }
         }
           }
@@ -219,8 +209,9 @@ void deplacement(){
       analogWrite(speedPinA, 0);
       digitalWrite(dir1PinA, LOW);
       digitalWrite(dir2PinA, HIGH);
+      
      }
-    Serial.println(avancer_tick);
+    
      if(tick_codeuse_B<avancer_tick){
       
       switch (inByte_B) {
@@ -230,13 +221,10 @@ void deplacement(){
       case '4': // Fait avancer les deux moteurs dans les sens de la marche
      
       analogWrite(speedPinB, speed_B);
-      
-    
       digitalWrite(dir1PinB, LOW);
       digitalWrite(dir2PinB, HIGH);
       
-      //Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
-      //Serial.println("    "); // Creates a blank line printed on the serial monitor
+      
       break;
       
       case '6': // Motor 2 Reverse
@@ -260,16 +248,18 @@ void deplacement(){
       digitalWrite(dir1PinB, LOW);
       digitalWrite(dir2PinB, HIGH);
      }
-  }
+  
 }      
 
 ///* Interruption sur tick de la codeuse */
 void compteur_A(){
     tick_codeuse_A=tick_codeuse_A+1;  // On incrémente le nombre de tick de la codeuse
+    tick_codeuse_vit_A=tick_codeuse_vit_A+1;
     //Serial.println(tick_codeuse);
 }
 void compteur_B(){
-    tick_codeuse_B=tick_codeuse_B+1;  // On incrémente le nombre de tick de la codeuse
+    tick_codeuse_B=tick_codeuse_B+1;// On incrémente le nombre de tick de la codeuse
+    tick_codeuse_vit_B=tick_codeuse_vit_B+1;
     //Serial.println(tick_codeuse);
 }
 
@@ -303,9 +293,9 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      //speed_A=255;
-      speed_B=255;
-      consigne_moteur_A = 2; 
+      
+      consigne_moteur_B = 1;
+      consigne_moteur_A = 1; 
 
       //avancer_tick=convert(dist);
      
@@ -321,8 +311,8 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      speed_B=200;
-      speed_A=200;
+      consigne_moteur_B = 1;
+      consigne_moteur_A = 1;
 
       //avancer_tick=convert(dist);
       
@@ -340,8 +330,8 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      speed_B=30;
-      speed_A=30;
+      consigne_moteur_B = 1;
+      consigne_moteur_A = 1;
       
       
       return convert((dist*perim)/360);
@@ -356,8 +346,8 @@ float action(int commande, int dist){
       tick_codeuse_A = 0; 
       tick_codeuse_B = 0; 
 
-      speed_B=30;
-      speed_A=30;
+      consigne_moteur_B = 1;
+      consigne_moteur_A = 1;
 
       
       return convert((dist*perim)/360);
@@ -372,42 +362,81 @@ float action(int commande, int dist){
 }
 
 /* Interruption pour calcul du P */
-void asservissement_A()
-{
-  Serial.println("a");
-  // Calcul de l'erreur
-  volatile int frequence_codeuse_A = frequence_echantillonnage*tick_codeuse_vit_A; //100*tick_codeuse
-  volatile float vit_roue_tour_sec_A = (float)frequence_codeuse_A/(float)tick_par_tour_codeuse_A/(float)rapport_reducteur;    //(100*tick_codeuse)/32/19 
-  volatile float erreur_A = consigne_moteur_A - vit_roue_tour_sec_A; // pour le proportionnel
-  somme_erreur_A += erreur_A; // pour l'intégrateur
-  volatile float delta_erreur_A = erreur_A-erreur_precedente_A;  // pour le dérivateur
-  erreur_precedente_A = erreur_A;
+void asservissement_A(){
+  if(avancer_tick>tick_codeuse_A ){
+    if(avancer_tick-tick_codeuse_A<250){
+          consigne_moteur_A=0.5;
+          
+        }
+        
+    // Calcul de l'erreur
+    int frequence_codeuse_A = frequence_echantillonnage*tick_codeuse_vit_A; //100*tick_codeuse
+     float vit_roue_tour_sec_A = (float)frequence_codeuse_A/(float)tick_par_tour_codeuse/(float)rapport_reducteur;    //(100*tick_codeuse)/32/19 
+    float erreur_A = consigne_moteur_A - vit_roue_tour_sec_A; // pour le proportionnel
+    somme_erreur_A += erreur_A; // pour l'intégrateur
+     float delta_erreur_A = erreur_A-erreur_precedente_A;  // pour le dérivateur
+    erreur_precedente_A = erreur_A;
+    
+    // Réinitialisation du nombre de tick de la codeuse
+    tick_codeuse_vit_A=0;
   
-  // Réinitialisation du nombre de tick de la codeuse
-  tick_codeuse_vit_A=0;
-
-  // P : calcul de la commande
-  speed_A = kp*erreur_A + ki*somme_erreur_A + kd*delta_erreur_A;  //somme des tois erreurs
+    // P : calcul de la commande
+    speed_A = kp*erreur_A + ki*somme_erreur_A + kd*delta_erreur_A;  //somme des tois erreurs
+    
+    // Normalisation et contrôle du moteur
+    if (speed_A > 255) {
+      speed_A = 255;  // sachant que l'on est branché sur un pont en H L293D
+    } 
+    else if (speed_A <0) {
+      speed_A = 0;
+    }
+  }else {
+    fin_A=true;
+    }
+  if(avancer_tick>tick_codeuse_B ){
+    if(avancer_tick-tick_codeuse_B<250){
+          consigne_moteur_B=0.5;
+          
+        }
+        
+    // Calcul de l'erreur
+    int frequence_codeuse_B = frequence_echantillonnage*tick_codeuse_vit_B; //100*tick_codeuse
+     float vit_roue_tour_sec_B = (float)frequence_codeuse_B/(float)tick_par_tour_codeuse/(float)rapport_reducteur;    //(100*tick_codeuse)/32/19 
+    float erreur_B = consigne_moteur_B - vit_roue_tour_sec_B; // pour le proportionnel
+    somme_erreur_B += erreur_B; // pour l'intégrateur
+     float delta_erreur_B = erreur_B-erreur_precedente_B;  // pour le dérivateur
+    erreur_precedente_B = erreur_B;
+    
+    // Réinitialisation du nombre de tick de la codeuse
+    tick_codeuse_vit_B=0;
   
-  // Normalisation et contrôle du moteur
-  if (vitMoteur_A > 255) {
-    speed_A = 255;  // sachant que l'on est branché sur un pont en H L293D
-  } 
-  else if (vitMoteur_A <0) {
-    speed_A = 0;
-  }
+    // P : calcul de la commande
+    speed_B = kp*erreur_B + ki*somme_erreur_B + kd*delta_erreur_B;  //somme des tois erreurs
+    
+    // Normalisation et contrôle du moteur
+    if (speed_B > 255) {
+      speed_B = 255;  // sachant que l'on est branché sur un pont en H L293D
+    } 
+    else if (speed_B <0) {
+      speed_B = 0;
+    }
+  }else {
+    fin_B=true;
+    }
+    if(fin_A and fin_B){
+      etape=etape+1;
+      ok=true;
+      }
   
-
-
-  // DEBUG
-
- Serial.println(speed_A);  
-//  Serial.print(";");
-
+  
+    
+  
+   
+  
+    deplacement();
+  
 }
-void test(){
-  
-  }
+
 
 
 
