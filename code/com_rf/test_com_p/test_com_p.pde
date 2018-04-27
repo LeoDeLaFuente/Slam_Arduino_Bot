@@ -1,7 +1,7 @@
 
 import processing.net.*;
 import java.net.Inet4Address ;
-int port = 6666; //Sever TCP-Port number
+int port = 8080; //Sever TCP-Port number
 
 Server server;
 String strdata = "0";
@@ -13,6 +13,7 @@ void setup(){
   noStroke(); 
   colorMode(RGB, 1);
   
+  println(Server.ip());
   //String[] ip = loadStrings("http://" + "icanhazip.com/");
   //println(ip[0]);
   
