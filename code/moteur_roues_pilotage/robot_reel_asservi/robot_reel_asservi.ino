@@ -89,9 +89,9 @@ attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
 timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
 
-// avancer_tick=action(1, 50);
-//  deplacement();
-//  delay(5000);
+ avancer_tick=action(1, 50);
+  deplacement();
+  delay(5000);
 
 
 
@@ -105,6 +105,7 @@ timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
 
 void loop() {
     timer.run();
+    
 
 }
 
@@ -121,8 +122,8 @@ void deplacement(){
       
       
       if(avancer_tick-tick_codeuse_A<250){
-        consigne_moteur_A=0.5;
-        
+        //consigne_moteur_A=0.5;
+        speed_A=20;
       }
       if(avancer_tick-tick_codeuse_B<250){
         speed_B=20;
@@ -262,7 +263,7 @@ void deplacement(){
   }
 }      
 
-/* Interruption sur tick de la codeuse */
+///* Interruption sur tick de la codeuse */
 void compteur_A(){
     tick_codeuse_A=tick_codeuse_A+1;  // On incrémente le nombre de tick de la codeuse
     //Serial.println(tick_codeuse);
@@ -399,7 +400,7 @@ void asservissement_A()
 
   // DEBUG
 
-  Serial.print("scss ");
+ // Serial.print("scss ");
 //  Serial.println(vit_roue_tour_sec,8);  // affiche à gauche la vitesse et à droite l'erreur
 //  Serial.print(" : ");
 //  Serial.print(erreur,4);

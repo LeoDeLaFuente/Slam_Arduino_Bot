@@ -32,7 +32,7 @@ float kd = 45;// 45           // Coefficient dérivateur
 
 /* Routine d'initialisation */
 void setup() {
-  Serial.begin(9600);         // Initialisation port COM
+  Serial.begin(57600);         // Initialisation port COM
   pinMode(pinPower, OUTPUT);   // Sorties commande moteur
   pinMode( pinInput1, OUTPUT );
   pinMode( pinInput2, OUTPUT );
