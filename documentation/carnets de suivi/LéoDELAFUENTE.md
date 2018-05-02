@@ -138,3 +138,12 @@ Après avoir tester notre servomoteur 180°  nous avons constaté qu' il ne fait
 - #### Compilation des codes asservisseent et robot_reel. Le robot ne reste stoujours pas prècis a cause du fait que le support du robot est légèrement décalé, et que les roues ne sont pas bien rondes.
 Un bug est apparu sur la carte arduino : avrdude: stk500_recv(): programmer is not responding, que je ne suis pas arrive, même en réinstallant l'ide arduino. Jai donc continué à travailler avec la carte de Félix, mais après une quinzaine de téléversement, cette seconde carte à rencontré le même problème.
 
+## Séance du 2 Avril 
+
+- #### Résolution de l'erreur lors du téléversement.
+Nous avons réinitialiser la carte, et le téléversement refonctionne (jusqu'à quand ? ). 
+
+- #### Essai du code et amélioration des valeurs.
+Les roues n'étant pas exactement parrallèles entre elles, le valeur de l'entraxe des roues tait difficilement mesurable. J ai donc procédé par tatonnement pour trouver la meilleur valeur. Le robot ne semble pas avoir d'erreur après 6 tour sur lui même dans le sens anti horaire. J ai désctivé la fonction permettant de faire des tours dans le sens horaire car celle-ci necessiterai une valeur d'entraxe un peu différente ( en exécutant 6 tour, le robot cumul une valeur d'environ 10 degrés.
+
+
