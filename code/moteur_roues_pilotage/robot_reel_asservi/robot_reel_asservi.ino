@@ -67,7 +67,7 @@ int avancer_tick=0; // variable du nombre de "tick" à effectuer
 int speed_B;
  int speed_A;
 
-float entraxe_roue=19.60; //entraxe de nos roues :18.9cm
+float entraxe_roue=19.1; //entraxe de nos roues :18.9cm
 float perim=entraxe_roue*3.14159; //perimetre du cercle parcourue par les roues lors d'un tour du robot dur lui même
 float diametre_roue= 6.5 ;//diametre de nos roue : 6.5cm
 
@@ -113,13 +113,13 @@ void loop() {
     if (etape==1 and ok){
       delay(2000);
       reinitialise();
-      avancer_tick=action(4,1440);
+      avancer_tick=action(1,35);
     }else if (etape==2 and ok){
       
       delay(2000);
       reinitialise();
-      avancer_tick=action(3,1440);
-      
+      avancer_tick=action(4,180);
+      etape=0;
       
     }else if ( etape == 3 and ok){
       
@@ -319,19 +319,20 @@ float action(int commande, int dist){
       return convert(dist);
     break;
     
-    
-    case 3 :
-       // on effectue dans ce cas un tour, la variable dist est donc langle en degrés
-      //paramétrage du sens de rotation des moteurs
-      inByte_A = '3'; 
-      inByte_B = '4';
+    // fonctionne mieux en 4(sensanti-horaire
+//    case 3 :
+//       // on effectue dans ce cas un tour, la variable dist est donc langle en degrés
+//      //paramétrage du sens de rotation des moteurs
+//      inByte_A = '3'; 
+//      inByte_B = '4';
+//
+//      //initialisation des compteurs
+//      tick_codeuse_A = 0; 
+//      tick_codeuse_B = 0; 
+//
+//      consigne_moteur_B = 0.5;
+//      consigne_moteur_A = 0.5;
 
-      //initialisation des compteurs
-      tick_codeuse_A = 0; 
-      tick_codeuse_B = 0; 
-
-      consigne_moteur_B = 0.5;
-      consigne_moteur_A = 0.5;
       
       
       return convert((dist*perim)/360);
