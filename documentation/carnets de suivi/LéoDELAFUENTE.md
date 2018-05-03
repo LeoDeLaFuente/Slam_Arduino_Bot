@@ -149,5 +149,5 @@ Les roues n'étant pas exactement parrallèles entre elles, le valeur de l'entra
 ## Travail personnel du 3 Avril
 
 - #### Combinaison du lidar et du robot.
-J ai regroupé les cablages du robot et du lidar sur l'arduino mega ainsi que créé un code qui est la combinaison des deux. Ainsi le robot peux maintenant se déplacer par exemple de 35 cm , faire des mesures avec le lidar, exécuter un demi-tour, puis refaire une mesure, et continuer ainsi. Il faut donc maintenant gérer les différents évènements qui vont arriver par la connexion wi-fi, pour les faire exécuter par le robot, et renvoyer les valeurs mesurées à l'ordinateur.
+J ai regroupé les cablages du robot et du lidar sur l'arduino mega ainsi que créé un code qui est la combinaison des deux. Ainsi le robot peux maintenant se déplacer par exemple de 35 cm , faire des mesures avec le lidar, exécuter un demi-tour, puis refaire une mesure, et continuer ainsi. Il faut donc maintenant gérer les différents évènements qui vont arriver par la connexion wi-fi, pour les faire exécuter par le robot, et renvoyer les valeurs mesurées à l'ordinateur.  
 [Cette vidéo montre un test du nouveau code (assemblage_1)](https://youtu.be/nSwKWuOiDY0)
