@@ -1,5 +1,14 @@
 #include <Servo.h>
-
+///branchements  :
+/*servomoteur bleu horizontale : 2
+ * servomoteur bleu verticale : 3 
+ * + fils + des servomoteurs branchés à la tension des piles (4*1.5v) 
+ * lidar :  fil blanc =>rx1 18 
+ *          fil vert =>tx1 19
+ *          fil violet et noir du => non branchés
+ * capa aux bornes de lalime des piles (4*1.5 v)
+ *          
+*/
 unsigned int distance;
 int angle = 20;
 boolean montee = true;
@@ -13,8 +22,8 @@ void setup(){
     Serial1.begin(115200);
     Serial.begin(115200);
     
-    servoX.attach(2);
-    servoY.attach(3);
+    servoX.attach(12);
+    servoY.attach(13);
     
     servoX.write(30);
     servoY.write(97);
@@ -24,7 +33,7 @@ void setup(){
 void loop(){
 
   distance = mesure();
-  delay(10);
+  delay(10); //  quoi sert ce delay ???
   String res = String(distance)+";"+String(angle)+";";
   Serial.println(res);
 
