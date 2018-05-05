@@ -76,7 +76,7 @@ void  draw(){
                   float [] arr = {pntX, pntY, posX, posY, orientation};
                   while(!pass);
                   stock.add(arr);
-                }
+                } 
               }
             } catch(Exception e ){ println(e);}
             esp32.write("ordres à faire \r");
