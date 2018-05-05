@@ -21,23 +21,23 @@ void setup(){
 }
 
 void draw(){
-  Client client = server.available(); //
-  /* Communication with client */
-  if(client != null){      // if client is  connecting
-      client.write("\n");
-      if((strdata=client.readString()) != null){
+  Client esp32 = server.available(); //
+  /* Communication with esp32 */
+  if(esp32 != null){      // if esp32 is  connecting
+      esp32.write("\n");
+      if((strdata=esp32.readString()) != null){
           strdata=trim(strdata);
           println(strdata);
-          println("#######");
-          client.write("ordres à faire \r");
+          //println("#######");
+          esp32.write("ordres à faire \r");
 
       }
-      client.write("miaou ! Fin des ordres ")
+      esp32.write("miaou ! Fin des ordres ");
   }
-  delay(10);
+  //delay(10);
 }
 
-/* When a client is connected */
+/* When a esp32 is connected */
 void serverEvent(Server s, Client c){
   println("Client connect - IP:"+c.ip()); // show IP
 }
