@@ -55,38 +55,40 @@ void  draw(){
   if(esp32 != null){      // if esp32 is  connecting
       esp32.write("\n");
       if((strdata=esp32.readString()) != null){
-           strdata=trim(strdata);
-           println(strdata);
-           String spl1 = strdata.split("::");
-           if(spl1.length != 0){
-             for(String atraiter : spl1){
-               String [] spl2 = atraiter.split(";");
-               if(spl2.length != 0){
-                 float posX = 0;
-                 float posY = 0;
-                 float orientation =float(30/180)*PI;
-                 int distance =  Integer.parseInt(spl2[0]);
-                 float ang =  ang = float(spl2[1])/180*PI;
-                 float pntX = posX + cos(ang+orientation)*distance;
-                 float pntY = posY + sin(ang+orientation)*distance;
-                 float [] arr = {pntX, pntY, posX, posY, orientation};
-                 while(!pass);
-                 stock.add(arr);
-               }
-             }
-           }
+          strdata=trim(strdata);
+          //println(strdata);
+          if(strdata.equals("début de la communication avec esp32")) esp32.write("début des communications");
+          if(!strdata.equals("") && !strdata.equals("début de la communication avec esp32") ){
+            String [] spl1 = strdata.split("::");
 
-           //println("#######");
-           esp32.write("ordres à faire \r");
-
-       }
+            try{
+              for(String atraiter : spl1){
+                println(atraiter);
+                String [] spl2 = atraiter.split(";");
+                if(!spl2[0].equals("")){
+                  float posX = 0;
+                  float posY = 0;
+                  float orientation =float(30/180)*PI;
+                  int distance =  Integer.parseInt(spl2[0]);
+                  float ang =  ang = float(spl2[1])/180*PI;
+                  float pntX = posX + cos(ang+orientation)*distance;
+                  float pntY = posY + sin(ang+orientation)*distance;
+                  float [] arr = {pntX, pntY, posX, posY, orientation};
+                  while(!pass);
+                  stock.add(arr);
+                }
+              }
+            } catch(Exception e ){ println(e);}
+            esp32.write("ordres à faire \r");
+          }
+      }
       esp32.write("miaou ! Fin des ordres ");
   }
-/*
+
   background(0);
   boussole();
   pointage();
-  scale(zoom); */
+  scale(zoom);
 }
 
 
