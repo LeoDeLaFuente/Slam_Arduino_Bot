@@ -10,30 +10,34 @@ void setup(){
   size(400,400,P3D);
   server = new Server(this, port);
   //println(this);
-  noStroke(); 
+  noStroke();
   colorMode(RGB, 1);
-  
+
   println(Server.ip());
   //String[] ip = loadStrings("http://" + "icanhazip.com/");
   //println(ip[0]);
-  
-  
+
+
 }
 
 void draw(){
-  Client client = server.available(); // 
+  Client client = server.available(); //
   /* Communication with client */
   if(client != null){      // if client is  connecting
       client.write("\n");
-      if((strdata=client.readString()) != null){ 
+      if((strdata=client.readString()) != null){
           strdata=trim(strdata);
           println(strdata);
+          println("#######");
+          client.write("ordres à faire \r");
+
       }
+      client.write("miaou ! Fin des ordres ")
   }
   delay(10);
 }
 
 /* When a client is connected */
 void serverEvent(Server s, Client c){
-  println("Client connect - IP:"+c.ip()); // show IP 
+  println("Client connect - IP:"+c.ip()); // show IP
 }
