@@ -55,35 +55,38 @@ void  draw(){
   if(esp32 != null){      // if esp32 is  connecting
       esp32.write("\n");
       if((strdata=esp32.readString()) != null){
-          strdata=trim(strdata);
-          println(strdata);
-          for(String atraiter : strdata.split("::")){
-            String [] spl = atraiter.split(";");
-            if(spl.length != 0){
-              float posX = 0;
-              float posY = 0;
-              float orientation =float(30/180)*PI;
-              int distance =  Integer.parseInt(spl[0]);
-              float ang =  ang = float(spl[1])/180*PI;
-              float pntX = posX + cos(ang+orientation)*distance;
-              float pntY = posY + sin(ang+orientation)*distance;
-              float [] arr = {pntX, pntY, posX, posY, orientation};
-              while(!pass);
-              stock.add(arr);
-            }
-          }
+           strdata=trim(strdata);
+           println(strdata);
+           String spl1 = strdata.split("::");
+           if(spl1.length != 0){
+             for(String atraiter : spl1){
+               String [] spl2 = atraiter.split(";");
+               if(spl2.length != 0){
+                 float posX = 0;
+                 float posY = 0;
+                 float orientation =float(30/180)*PI;
+                 int distance =  Integer.parseInt(spl2[0]);
+                 float ang =  ang = float(spl2[1])/180*PI;
+                 float pntX = posX + cos(ang+orientation)*distance;
+                 float pntY = posY + sin(ang+orientation)*distance;
+                 float [] arr = {pntX, pntY, posX, posY, orientation};
+                 while(!pass);
+                 stock.add(arr);
+               }
+             }
+           }
 
-          //println("#######");
-          esp32.write("ordres à faire \r");
+           //println("#######");
+           esp32.write("ordres à faire \r");
 
-      }
+       }
       esp32.write("miaou ! Fin des ordres ");
   }
-
+/*
   background(0);
   boussole();
   pointage();
-  scale(zoom);
+  scale(zoom); */
 }
 
 
