@@ -4,8 +4,8 @@
 // parti lidar
 #include <Servo.h>
 ///branchements  :
-/*servomoteur bleu horizontale : 2
- * servomoteur bleu verticale : 3 
+/*servomoteur bleu horizontale : 12
+ * servomoteur bleu verticale : 13 
  * + fils + des servomoteurs branchés à la tension des piles (4*1.5v) 
  * lidar :  fil blanc =>rx1 18 
  *          fil vert =>tx1 19
@@ -38,7 +38,7 @@ const int frequence_echantillonnage = 100;  // Fréquence d'exécution de l'asse
 const int rapport_reducteur = 80;          // Rapport entre le nombre de tours de l'arbre moteur et de la roue
 const int tick_par_tour_codeuse = 4;  //64 tick sur deux capteurs hall, ici on a pris un seul capteur
 
-
+ggg
 
 //consigne en tour/s
 float consigne_moteur_A = 0.5; //  Consigne nombre de tours de roue par seconde
@@ -102,7 +102,7 @@ void setup() {  // Setup runs once per reset
     // setup lidar
     
     Serial1.begin(115200);
-    //Serial.begin(115200);
+    Serial.begin(115200);
     
     servoX.attach(12);
     servoY.attach(13);
@@ -114,7 +114,6 @@ void setup() {  // Setup runs once per reset
 
   // setup robot
   // initialize serial communication @ 9600 baud:
-  Serial.begin(57600);
   
   //Define L298N Dual H-Bridge Motor Controller Pins
   
