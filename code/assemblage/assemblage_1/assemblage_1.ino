@@ -38,7 +38,7 @@ const int frequence_echantillonnage = 100;  // Fréquence d'exécution de l'asse
 const int rapport_reducteur = 80;          // Rapport entre le nombre de tours de l'arbre moteur et de la roue
 const int tick_par_tour_codeuse = 4;  //64 tick sur deux capteurs hall, ici on a pris un seul capteur
 
-ggg
+
 
 //consigne en tour/s
 float consigne_moteur_A = 0.5; //  Consigne nombre de tours de roue par seconde
