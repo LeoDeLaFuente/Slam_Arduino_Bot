@@ -38,7 +38,7 @@ const int frequence_echantillonnage = 100;  // Fréquence d'exécution de l'asse
 const int rapport_reducteur = 80;          // Rapport entre le nombre de tours de l'arbre moteur et de la roue
 const int tick_par_tour_codeuse = 4;  //64 tick sur deux capteurs hall, ici on a pris un seul capteur
 
-ggg
+
 
 //consigne en tour/s
 float consigne_moteur_A = 0.5; //  Consigne nombre de tours de roue par seconde
@@ -102,7 +102,8 @@ void setup() {  // Setup runs once per reset
     // setup lidar
     
     Serial1.begin(115200);
-    Serial.begin(115200);
+    //Serial.begin(115200);
+    Serial2.begin(115200);
     
     servoX.attach(12);
     servoY.attach(13);
@@ -128,7 +129,7 @@ void setup() {  // Setup runs once per reset
   attachInterrupt(digitalPinToInterrupt(3), compteur_B, CHANGE);
   
   
-  Serial.println(perim);
+  //Serial.println(perim);
   
   timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
   
@@ -181,8 +182,9 @@ void prise(){
     distance = mesure();
     delay(10); //  quoi sert ce delay ???
     String res = String(distance)+";"+String(angle)+";";
-    Serial.println(res);
-  
+    //Serial.println(res);
+    Serial2.println(res);
+    
     servoX.write(angle);
     if (change){
       change = false;
@@ -265,10 +267,10 @@ void deplacement(){
       
 
       
-      Serial.print(tick_codeuse_A);
+  /*    Serial.print(tick_codeuse_A);
       Serial.print(" | ");
       Serial.println(tick_codeuse_B);
-    
+   */// debogages 
       
      
     if(tick_codeuse_A<avancer_tick){
@@ -536,7 +538,7 @@ void asservissement_A(){
      etape=etape+1;
      ok=true;
   }
-  Serial.println(speed_B);
+  //Serial.println(speed_B);
   deplacement();
   
   

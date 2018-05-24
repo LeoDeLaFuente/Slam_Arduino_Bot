@@ -3,15 +3,21 @@
 #include <WiFi.h>
 #include <Wire.h>
 #include "SSD1306.h"
+#include <SoftwareSerial.h>
 
 
 const char* ssid1 = "blabla";
-const char* ssid     = "freebox_LECVSF";
-const char* password = "0007CBBCFECA";
+const char* ssid     = "iPhone de Félix";
+const char* password = "miaoumiaou666:!";
 
-const char* ssidProcessing = "192.168.0.23";
+const char* ssidProcessing = "172.20.10.2";
 
 const int port = 8080;
+
+int distance = 0;
+int angle = 0;
+
+SoftwareSerial portEsp(17,16); // RX = 17 | Tx = 16
 
    
 WiFiClient servProcessing;
@@ -34,6 +40,8 @@ void setup(){
     display.setFont(ArialMT_Plain_10);
     display.clear();
 /*==================*/
+
+    portEsp.begin(115200);
     
     Serial.begin(115200);
     delay(100);
@@ -84,12 +92,24 @@ void setup(){
 
 
 void loop(){
-  
+
+
+    portEsp.listen();
+
+    String envoi = "";
+    while ( portEsp.available() > 0){
+      envoi += portEsp.read()
+      
+    }
     
-    unsigned long t1 = millis();
-    servProcessing.print("début de la loop");
+    ecrire(envoi);
+    //unsigned long t1 = millis();
+    String envoi = "::"+String(distance)+";"+String(angle)+";instruction\r"; 
+    servProcessing.print(envoi);
     unsigned long timeout = millis();
-    while (servProcessing.available() == 0) {
+    if(servProcessing.available()) lireServ();
+    delay(3);
+    /*while (servProcessing.available() == 0) {
         if (millis() - timeout > 5000) {
             Serial.println(">>> servProcessing Timeout !");
             servProcessing.stop();
@@ -101,22 +121,34 @@ void loop(){
     while(servProcessing.available()) {
         String line = servProcessing.readStringUntil('\r');
         ecrire(line);
-    }
+    } */
 
-    unsigned long t = millis() - t1;
-    ecrire(String(t));
+    //unsigned long t = millis() - t1;
+    //ecrire("temps de rep"+String(t));
+    distance += 7;
+    angle ++;
+    if(distance >= 1000) distance = 0;
+    if(angle == 200) angle = 0;
 
+}
+
+void lireServ(){
+  while(servProcessing.available()) {
+        String line = servProcessing.readStringUntil('\r');
+        ecrire(line);
+  }
 }
 
 void connexion(){
       if (!servProcessing.connect(ssidProcessing, port)) {
         ecrire("connexion fail");
+        connexion();
         return;
     }
 
 
     //ici on envoie des données à processing
-    servProcessing.print("début de la communication avec esp32");
+    servProcessing.print("début de la communication avec esp32\r");
     unsigned long timeout = millis();
     while (servProcessing.available() == 0) {
         if (millis() - timeout > 5000) {
@@ -129,7 +161,8 @@ void connexion(){
     // Read all the lines of the reply from server and print them to Serial
     while(servProcessing.available()) {
         String line = servProcessing.readStringUntil('\r');
-        Serial.print(line);
+        //Serial.print(line);
+        ecrire(line);
     }
 }
 
