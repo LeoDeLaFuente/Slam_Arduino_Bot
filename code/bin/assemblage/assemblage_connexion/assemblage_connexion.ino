@@ -97,6 +97,7 @@ float diametre_roue= 6.5 ;//diametre de nos roue : 6.5cm
 
 
 String mesures[160];
+int i= 0 ;
 
 
 void setup() {  // Setup runs once per reset
@@ -134,7 +135,7 @@ void setup() {  // Setup runs once per reset
   //Serial.println(perim);
   
   timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
-
+  
   
 }
 
@@ -143,16 +144,38 @@ void loop() {
     boolean seulementMesure=false;
     boolean ordreRecu;
     remonte:
-    while(!Serial2.available()){
-      Serial2.print("dispo\r");
-      Serial.println("dispo\r");
-      delay(1000);
-    }
+    while(true){
+      char c;
+      if(Serial.available()){
+        char c = Serial2.read(); // on lit le caractère
+      }
+      if(strcmp(c,"!")==0){
+        break;
+      }
+      Serial.print(c); // on l'affiche
+      i=i+1;
+      if(i == 10){
+        Serial2.print(";dispo;\r");
+        Serial.println(";dispo;\r");
+        i=0;
+      }
+      delay(100);
+     }
+//    while(Serial2.read()!="!"){
+//      i=i+1;
+//      if(i == 10){
+//        Serial2.print(";dispo;\r");
+//        Serial.println(";dispo;\r");
+//        i=0;
+//      }
+//      delay(100);
+//    }
     String ordre = lecture();
     
     
     Serial.println("voici l'ordre");
     Serial.println(ordre);
+    Serial.println("");
   
     int commande = getValue(ordre, ';', 1).toInt();
     int distance = getValue(ordre, ';', 2).toInt();
@@ -195,8 +218,8 @@ String lecture(){
       lire+=Serial2.read();
       delay(10); //petit temps de pause
       Serial.print(".");
-      
     }
+    
     return lire;
 }
 
