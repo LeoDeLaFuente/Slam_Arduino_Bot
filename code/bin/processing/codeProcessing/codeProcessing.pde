@@ -15,8 +15,14 @@ ArrayList<float[]> stock;
 int decallageV = 0;
 int decallageH = 0;
 
+boolean dispo = false;
+String ordre = "début";
+String suivant = ";1;30";
+
+
 boolean pass = true;
-boolean debut = false;
+boolean debut = true;
+
 /* Initialisation du programme, */
 void setup(){
   background(0);
@@ -28,7 +34,6 @@ void setup(){
   println("fin intialisation");
   delay(1000);
   println("Début de la communication");
-  debut = true;
 
 // début du serveur
   server = new Server(this, port);
@@ -51,44 +56,108 @@ void serverEvent(Server s, Client c){
 
 void  draw(){
   Client esp32 = server.available(); //
-  /* Communication with esp32 */
+  
+  
+//====  Communication with esp32 ====//
+
   if(esp32 != null){      // if esp32 is  connecting
       esp32.write("\n");
       if((strdata=esp32.readString()) != null){
           strdata=trim(strdata);
           //println(strdata);
-          if(strdata.equals("début de la communication avec esp32")) esp32.write("début des communications");
-          if(!strdata.equals("") && !strdata.equals("début de la communication avec esp32") ){
-            String [] spl1 = strdata.split("::");
-
-            try{
-              for(String atraiter : spl1){
-                println(atraiter);
-                String [] spl2 = atraiter.split(";");
-                if(!spl2[0].equals("")){
-                  float posX = 0;
-                  float posY = 0;
-                  float orientation =float(30/180)*PI;
-                  int distance =  Integer.parseInt(spl2[0]);
-                  float ang =  ang = float(spl2[1])/180*PI;
-                  float pntX = posX + cos(ang+orientation)*distance;
-                  float pntY = posY + sin(ang+orientation)*distance;
-                  float [] arr = {pntX, pntY, posX, posY, orientation};
-                  while(!pass);
-                  stock.add(arr);
-                } 
-              }
-            } catch(Exception e ){ println(e);}
-            esp32.write("ordres à faire \r");
-          }
+          reception(strdata); //traitement du string d'arrivé
       }
-      esp32.write("miaou ! Fin des ordres ");
+      print("fin de la réception des données, réponse : ");
+      
+      String rep = reponse();
+      if( !(rep.equals(""))){
+         delay(50);
+         esp32.write(rep);
+      }
+      esp32.write(";1;102;");
+      println(rep);
+  }
+  
+//==== fin de la communication avec esp32 ====//
+  
+
+//// tracé de la map ////
+  if (mousePressed == true){
+    int x = int(mouseX/resolution);
+    int y = int(mouseY/resolution);
+    println("bite");
+    //delay(5);
+   mousePressed = false;
   }
 
   background(0);
   boussole();
   pointage();
   scale(zoom);
+}
+
+
+
+
+String reponse(){
+  
+  if(ordre.equals("debut")) return ";0;";
+   
+    if(dispo){
+      if(!(suivant.equals(""))){
+        String rtrn = suivant;
+        suivant = "";
+        return rtrn;
+      }
+      while(ordre.equals(""));
+      String rtrn = ordre;
+      ordre = "";
+      return rtrn;
+   }
+   
+   return "";
+}
+
+void reception(String strdata){
+  //  début de la communication 
+     if(strdata.equals("début de la communication avec esp32")){ 
+      println("Début de la communication avec esp32");
+      return;
+    }
+    
+    if(strdata.equals("dispo")){
+      dispo = true;
+      return;
+    }
+    
+    
+    if(!strdata.equals("") && !strdata.equals("début de la communication avec esp32") ){
+      String [] spl1 = strdata.split("::");
+
+      try{
+        for(String atraiter : spl1){
+          println(atraiter);
+          String [] spl2 = atraiter.split(";");
+          int i = 0;
+          String sDistance = "";
+          String sAngle = "";
+          
+          for( String s : spl2){
+            if( s.equals("distance")){
+              sDistance = spl2[i+1];
+            }
+            if( s.equals("angle")){
+              sAngle = spl2[i+1];
+            }
+            i++;
+          }
+          
+          if( !(sDistance.equals("")) && !(sAngle.equals(""))){
+            ajoutData(sDistance,sAngle);
+          }
+        }
+      } catch(Exception e ){ println(e);}
+    }
 }
 
 
@@ -127,6 +196,19 @@ void fleche(float px, float py,float orientation){
   line(px+15*cos(orientation),py+15*sin(orientation),px+15*cos(orientation)-5,py+15*sin(orientation)-5);
   line(px+15*cos(orientation),py+15*sin(orientation),px+15*cos(orientation)-5,py+15*sin(orientation)+5);
 
+}
+
+void ajoutData(String sDistance, String sAngle){
+    float posX = 0;
+    float posY = 0;
+    float orientation =float(30/180)*PI;
+    int distance =  Integer.parseInt(sDistance);
+    float ang =  ang = float(sAngle)/180*PI;
+    float pntX = posX + cos(ang+orientation)*distance;
+    float pntY = posY + sin(ang+orientation)*distance;
+    float [] arr = {pntX, pntY, posX, posY, orientation};
+    while(!pass);
+    stock.add(arr);
 }
 
 

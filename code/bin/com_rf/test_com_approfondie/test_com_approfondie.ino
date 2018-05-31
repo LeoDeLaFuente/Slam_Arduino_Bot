@@ -1,23 +1,40 @@
+/*
+  * Exemple de code de l'esp32 communiquant avec un server processing sur le même réseau.
+*/
+
+
+
 #include <SPI.h>
 #include <LoRa.h>
 #include <WiFi.h>
 #include <Wire.h>
 #include "SSD1306.h"
+#include <SoftwareSerial.h>
 
 
-const char* ssid1 = "blabla";
-const char* ssid     = "freebox_LECVSF";
-const char* password = "0007CBBCFECA";
+const char* ssid     = "Le nom de votre réseau";
+const char* password = "Le mot de passe";
 
-const char* ssidProcessing = "192.168.0.23";
+const char* ssidProcessing = "L'adresse ip de processing";
+
+const int port = 8080;
+
+int distance = 0;
+int angle = 0;
+
+SoftwareSerial portEsp(17,16); // RX = 17 | Tx = 16
 
 
-SSD1306 display(0x3c, 4, 15); 
+WiFiClient servProcessing;
+
+
+//écran oled//
+SSD1306 display(0x3c, 4, 15);
 
 
 
 void setup(){
-/*==== initialisation de l'écran ====*/  
+/*==== initialisation de l'écran ====*/
     pinMode(25,OUTPUT);
     pinMode(16,OUTPUT);
     digitalWrite(16, LOW);    // set GPIO16 low to reset OLED
@@ -28,7 +45,9 @@ void setup(){
     display.setFont(ArialMT_Plain_10);
     display.clear();
 /*==================*/
-    
+
+    portEsp.begin(115200);
+
     Serial.begin(115200);
     delay(100);
 
@@ -44,7 +63,7 @@ void setup(){
     WiFi.begin(ssid, password);
     //WiFi.begin(ssid1);
     while (WiFi.status() != WL_CONNECTED) {
-        delay(250);
+        delay(50);
         Serial.print(".");
         display.drawString(10,0,"...");
         display.display();
@@ -63,15 +82,9 @@ void setup(){
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
     delay(300);
-}
 
-int value = 0;
+    //=== début de la connexion vers le server processing ===//
 
-void loop()
-{
-    delay(3000);
-    ++value;
-    
     display.clear();
     display.drawString(0,0,"connecting to "+String(ssidProcessing));
     display.display();
@@ -79,25 +92,56 @@ void loop()
     Serial.println(ssidProcessing);
 
     // Use WiFiClient class to create TCP connections
-    WiFiClient servProcessing;
-    const int port = 8080;
+    connexion();
+}
 
-    //si la connexion echoue
-    if (!servProcessing.connect(ssidProcessing, port)) {
-        Serial.println("connection failed");
-        display.clear();
-        display.drawString(0,0,"connection failed");
-        display.display();
+
+void loop(){
+
+
+    portEsp.listen();
+
+    String envoi = "";
+    while ( portEsp.available() > 0){
+      envoi += portEsp.read()
+
+    }
+
+    ecrire(envoi);
+    //unsigned long t1 = millis();
+    String envoi = "::"+String(distance)+";"+String(angle)+";instruction\r";
+    servProcessing.print(envoi);
+    unsigned long timeout = millis();
+    if(servProcessing.available()) lireServ();
+    delay(3);
+    distance += 7;
+    angle ++;
+    if(distance >= 1000) distance = 0;
+    if(angle == 200) angle = 0;
+
+}
+
+void lireServ(){
+  while(servProcessing.available()) {
+        String line = servProcessing.readStringUntil('\r');
+        ecrire(line);
+  }
+}
+
+void connexion(){
+      if (!servProcessing.connect(ssidProcessing, port)) {
+        ecrire("connexion fail");
+        connexion();
         return;
     }
 
 
     //ici on envoie des données à processing
-    servProcessing.print("miaou");
+    servProcessing.print("début de la communication avec esp32\r");
     unsigned long timeout = millis();
     while (servProcessing.available() == 0) {
         if (millis() - timeout > 5000) {
-            Serial.println(">>> servProcessing Timeout !");
+            ecrire(">>> servProcessing Timeout !");
             servProcessing.stop();
             return;
         }
@@ -106,11 +150,14 @@ void loop()
     // Read all the lines of the reply from server and print them to Serial
     while(servProcessing.available()) {
         String line = servProcessing.readStringUntil('\r');
-        Serial.print(line);
+        //Serial.print(line);
+        ecrire(line);
     }
-
-    Serial.println();
-    Serial.println("closing connection");
 }
 
-
+void ecrire(String s){
+  Serial.println(s);
+  display.clear();
+  display.drawString(0,0,s);
+  display.display();
+}

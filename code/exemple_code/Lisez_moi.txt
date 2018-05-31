@@ -1,0 +1,2 @@
+Dans ce dossier, vous allez trouver différents exemples de codes qui nous ont aider
+dans ce projet.

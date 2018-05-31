@@ -1,4 +1,9 @@
-
+/*
+  * Code processing d'exemple d'un server sous processing, reçevant les informations de l'esp32
+  * Il faut que l'esp32 et l'ordinateur soient connecté sur le même réseau wifi.
+  * Le port par defaut est 8080.
+  * Une fois executé, le server envoi son adresse ip dans la sortie standard de processing.
+*/
 import processing.net.*;
 import java.net.Inet4Address ;
 int port = 8080; //Sever TCP-Port number
@@ -14,8 +19,6 @@ void setup(){
   colorMode(RGB, 1);
 
   println(Server.ip());
-  //String[] ip = loadStrings("http://" + "icanhazip.com/");
-  //println(ip[0]);
 
 
 }
@@ -28,16 +31,14 @@ void draw(){
       if((strdata=esp32.readString()) != null){
           strdata=trim(strdata);
           println(strdata);
-          //println("#######");
           esp32.write("ordres à faire \r");
 
       }
-      esp32.write("miaou ! Fin des ordres ");
+      esp32.write("Bien reçu !");
   }
-  //delay(10);
 }
 
-/* When a esp32 is connected */
+/* Quand l'esp 32 se connecte. */
 void serverEvent(Server s, Client c){
   println("Client connect - IP:"+c.ip()); // show IP
 }

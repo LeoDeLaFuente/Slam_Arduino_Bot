@@ -1,0 +1,6 @@
+Afin de pouvoir televerser du code sur la carte esp32 de Heltec,
+je vous redirige vers le github du constructeur expliquant tout en détail.
+
+https://github.com/espressif/arduino-esp32
+
+Puis regardez sur le read_me installation instructions.
