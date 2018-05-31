@@ -169,7 +169,7 @@ Tâches effectuées :
 
   - Continuité de la télécomunication wifi avec la carte esp32. 
    - Fin du module laser ! Le lidar marche enfin (presque à la perfection) et le code d'affichage est opérationnel. 
-   <img href="documentation/Images/tracé.jpg" height="200"/>
+   <img src="/documentation/Images/tracé.jpg" height="200"/>
 
   
 ***
