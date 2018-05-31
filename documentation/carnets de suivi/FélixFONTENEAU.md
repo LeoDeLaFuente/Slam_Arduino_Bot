@@ -161,12 +161,45 @@ Tâches effectuées :
 
   - Début de construction du module RF reliant le robot à l'ordinateur. Pour cela nous allons changer un peu le le schéma de notre projet. En effet, vu le débit d'informations possibles à passer, nous allons utiliser la carte ESP 32 avec son port wifi. Le robot pourra donc immédiatement communiquer avec l'ordinateur avec une communication wifi. Le robot et l'ordinateur seront dans un premier temps connecté à un réseau commun.
   
-  - Fin du module laser ! Le lidar marche enfin (presque à la perfection) et le code d'affichage est opérationnel. [image cartographie]
+
   
+  ***
+  
+## Séance du 10 Avril 
+
+  - Continuité de la télécomunication wifi avec la carte esp32. 
+   - Fin du module laser ! Le lidar marche enfin (presque à la perfection) et le code d'affichage est opérationnel. 
+   <img href="documentation/Images/tracé.jpg" height="200"/>
+
+  
+***
+  
+## Travail personel entre les séances 
+
+  - Travail long et fastidieux sur la carte esp32.
+
   - L'utilisation de la carte esp 32 est difficile au début. En effet elle demande pas mal de documentation sur son paramétrage avec l'IDE arduino. De plus la connexion Wifi n'est pas très facile à gérer et demande beaucoup de temps.
   
   - Fin de la communication Wifi entre la carte esp 32 et processing. Pour cela, la carte esp 32 va se connecter à l'ip de l'ordinateur et arriver sur le server processing. Le code sur processing est très similaire à n'importe quel serveur java. Pour optimisation, on va d'abord connecter les deux éléments ensemble avec un mot de passe etc. Puis par soucis d'éfficacité, n'envoyer que les informations nécessaires par wifi.
   Cette partie m'a pris beaucoup de temps et d'investissement car elle a été difficile à cerner, puis à réaliser avec de nombreux diffonctionnements entre les connexions avec un hotspot wifi. 
   
-  -
+    ***
+  
+## Séance du 04 Mai
 
+  - Harmonisation du code du serveur processing, et du code de traçage de la carte en 2d.
+  - Optimisation de l'application.
+  
+  ***
+  
+## Travail personel entre les séances 
+
+  - Améliorations des échanges entre l'esp32 et l'application processing.
+  
+  - Création d'une simulation de nuage de points avec l'esp32 à distance.
+  
+   ***
+  
+## Séance du 14 Mai
+  
+  - Soudure des pins de l'esp32.
