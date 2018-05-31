@@ -203,3 +203,13 @@ Tâches effectuées :
 ## Séance du 14 Mai
   
   - Soudure des pins de l'esp32.
+  
+  ***
+## Travail personel final 
+
+  - Harmonisation finale des deux cartes (méga et esp32). Cette tâche fut de loin la plus dure et la plus compliquée. Elle fait intervenir plusieurs éléments avec beaucoup de lignes de code. Une capacité d'abstraction et de prise de recule fut nécessaire pour faire face aux problèmes rencontré. 
+  
+  - Au final, la connexion série entre l'esp32 et la Méga pose beaucoup de problèmes. Après de nombreusess heures à être passé à essayer de recabler ou de filtrer les données transmises. Nous n'avons pas reussi à gerer cette petite liaison qui aura causé la chute de notre projet. 
+  <img scr="/documentation/Images/IMG_1142.jpg" height="200"/>
+  
+   
