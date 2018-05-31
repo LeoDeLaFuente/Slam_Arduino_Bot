@@ -1,16 +1,15 @@
-
 #include <SimpleTimer.h>
 
 // parti lidar
 #include <Servo.h>
-///branchements  :
+//branchements  :
 /*servomoteur bleu horizontale : 12
  * servomoteur bleu verticale : 13 
  * + fils + des servomoteurs branchés à la tension des piles (4*1.5v) 
  * lidar :  fil blanc =>rx1 18 
  *          fil vert =>tx1 19
  *          fil violet et noir du => non branchés
- * capa aux bornes de lalime des piles (4*1.5 v)
+ * capa aux bornes de l'alime des piles (4*1.5 v)
  *          
 */
 unsigned int distance;
@@ -39,7 +38,6 @@ const int rapport_reducteur = 80;          // Rapport entre le nombre de tours d
 const int tick_par_tour_codeuse = 4;  //64 tick sur deux capteurs hall, ici on a pris un seul capteur
 
 
-
 //consigne en tour/s
 float consigne_moteur_A = 0.5; //  Consigne nombre de tours de roue par seconde
 float consigne_moteur_B = 0.5;
@@ -61,11 +59,7 @@ boolean fin_A=false;
 boolean fin_B=false;
 boolean ok=true;
 
-
- 
 //###########################
-
-
 
 // Motor 1
 int dir1PinA = 4;
@@ -96,7 +90,6 @@ float perim=entraxe_roue*3.14159; //perimetre du cercle parcourue par les roues 
 float diametre_roue= 6.5 ;//diametre de nos roue : 6.5cm
 
 
-
 void setup() {  // Setup runs once per reset
     
     // setup lidar
@@ -114,7 +107,6 @@ void setup() {  // Setup runs once per reset
 
 
   // setup robot
-  // initialize serial communication @ 9600 baud:
   
   //Define L298N Dual H-Bridge Motor Controller Pins
   
@@ -131,20 +123,9 @@ void setup() {  // Setup runs once per reset
   
   //Serial.println(perim);
   
-  timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
-  
-  
-  
-  
-
-
-
-
-
-
-
-  
+  timer.setInterval(1000/frequence_echantillonnage,asservissement_A); 
 }
+
 
 void loop() {
     timer.run();
@@ -155,29 +136,17 @@ void loop() {
       reinitialise();
       avancer_tick=action(1,35);
       
-      
     }else if (etape==2 and ok){
       prise();
       delay(2000);
       reinitialise();
       avancer_tick=action(4,180);
-      
-      
-      etape=0;
-      
-    }else if ( etape == 3 and ok){
-      
-    }else if (etape == 4 and ok){
-      
-      }
-
+    }
 }
 
 // fonction lidar :
 void prise(){
   while (true){
-    
-    
     
     distance = mesure();
     delay(10); //  quoi sert ce delay ???
@@ -261,12 +230,7 @@ void reinitialise(){
 
 void deplacement(){
    
-   
-      
-      
-      
 
-      
   /*    Serial.print(tick_codeuse_A);
       Serial.print(" | ");
       Serial.println(tick_codeuse_B);
@@ -285,9 +249,7 @@ void deplacement(){
       analogWrite(speedPinA, speed_A);//Sets speed variable via PWM 
       digitalWrite(dir1PinA, LOW);
       digitalWrite(dir2PinA, HIGH);
-  
-      
-      
+    
       
       break;
       
@@ -304,8 +266,6 @@ void deplacement(){
       digitalWrite(dir2PinA, LOW);
       
       break;
-      
-     
       
       default:
       // turn all the connections off if an unmapped key is pressed:
@@ -540,6 +500,3 @@ void asservissement_A(){
   //Serial.println(speed_B);
   deplacement();
 }
-
-
-
