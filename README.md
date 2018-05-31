@@ -25,5 +25,4 @@ Ce projet est principalement réalisé avec une carte arduino Mega pour le robot
 
 Après avoir travaillé à deux sur ce projet durant un semestre, nous avons finalement rendu ce rapport récapitulant notre travail.
 
-
-<img src="/documentation/Images/schéma_final.jpg" alt="shéma projet" >
+<img src="/documentation/Images/schéma_final.jpg" alt="shéma projet" height : 500 px>
