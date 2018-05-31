@@ -24,3 +24,6 @@ Ce projet est principalement réalisé avec une carte arduino Mega pour le robot
 <img src="/documentation/Images/processing3-logo.png" alt="Logo Processing" >
 
 Après avoir travaillé à deux sur ce projet durant un semestre, nous avons finalement rendu ce rapport récapitulant notre travail.
+
+
+<img src="/documentation/Images/sschéma_final.jpg" alt="shéma projet" >
