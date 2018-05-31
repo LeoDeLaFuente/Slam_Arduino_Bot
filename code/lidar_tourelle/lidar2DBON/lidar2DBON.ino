@@ -18,9 +18,9 @@ Servo servoY;
 
 
 void setup(){
-  
+    Serial.begin(9600);
     Serial1.begin(115200);
-    Serial.begin(115200);
+    Serial2.begin(9600);
     
     servoX.attach(12);
     servoY.attach(13);
@@ -31,12 +31,26 @@ void setup(){
 }
 
 void loop(){
+  if (Serial2.available()) { // tant que des caractères sont en attente
+    Serial2.println("reçu");
+    char c = Serial2.read(); // on lit le caractère
+
+    Serial.print(c); // on l'affiche
+
+    //Serial.print('\t'); // on affiche une tabulation
+
+    //Serial.println(int(c)); //on affiche le code correspondant
+
+    delay(100); //petit temps de pause
+
+  }
 
   distance = mesure();
   delay(10); //  quoi sert ce delay ???
-  String res = String(distance)+";"+String(angle)+";";
+  String res = String(";distance;")+String(distance)+String(";angle;")+String(angle)+String(";");
+  Serial2.println(res);
   Serial.println(res);
-
+  
   servoX.write(angle);
   delay(40);
   if(montee){
@@ -56,6 +70,7 @@ void loop(){
 
 unsigned int mesure(){
     unsigned int t2;
+    
     while( Serial1.available()>=9){  
       if((0x59 == Serial1.read()) && (0x59 == Serial1.read())){ //Byte1 & Byte2
           unsigned int t1 = Serial1.read(); //Byte3
