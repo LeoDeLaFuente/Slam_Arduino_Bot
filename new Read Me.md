@@ -16,3 +16,5 @@ Au début du fonctionnement, le robot s’initialise puis se connecte à l’app
 Ce projet est principalement réalisé avec une carte arduino Mega pour le robot et le logiciel processing pour l'application du coté ordinateur.
 
 ![Logo Processing](/documentation/Images/processing3-logo.png) 
+
+Après avoir travaillé à deux sur ce projet durant un semestre, nous avons finalement rendu ce rapport récapitulant notre travail.
