@@ -25,9 +25,9 @@ void setup(){
   frameRate(30);
   data = new ArrayList<float[]>();
   stock = new ArrayList<float[]>();
-  println("attention");
+  println("fin intialisation");
   delay(1000);
-  println("HOP Départ !");
+  println("Début de la communication");
   debut = true;
 
 // début du serveur

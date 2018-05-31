@@ -3,7 +3,7 @@
 #include <WiFi.h>
 #include <Wire.h>
 #include "SSD1306.h"
-#include <SoftwareSerial.h>
+//#include <SoftwareSerial.h>
 
 
 const char* ssid1 = "blabla";
@@ -17,8 +17,7 @@ const int port = 8080;
 int distance = 0;
 int angle = 0;
 
-SoftwareSerial portEsp(17,16); // RX = 17 | Tx = 16
-
+HardwareSerial Serial2(2); // pin 16=RX, pin 17=TX 
    
 WiFiClient servProcessing;
 
@@ -40,10 +39,9 @@ void setup(){
     display.setFont(ArialMT_Plain_10);
     display.clear();
 /*==================*/
-
-    portEsp.begin(115200);
+    Serial2.begin(9600); // pin 16=RX, pin 17=TX   
     
-    Serial.begin(115200);
+    Serial.begin(9600);
     delay(100);
 
     // We start by connecting to a WiFi network
@@ -57,13 +55,15 @@ void setup(){
 
     WiFi.begin(ssid, password);
     //WiFi.begin(ssid1);
+    String att = ".";
     while (WiFi.status() != WL_CONNECTED) {
         delay(50);
         Serial.print(".");
-        display.drawString(10,0,"...");
+        display.drawString(10,0,att);
         display.display();
         delay(250);
         display.clear();
+        att += ".";
     }
 
     display.clear();
@@ -92,51 +92,25 @@ void setup(){
 
 
 void loop(){
-
-
-    portEsp.listen();
-
-    String envoi = "";
-    while ( portEsp.available() > 0){
-      envoi += portEsp.read()
-      
-    }
-    
-    ecrire(envoi);
-    //unsigned long t1 = millis();
-    String envoi = "::"+String(distance)+";"+String(angle)+";instruction\r"; 
-    servProcessing.print(envoi);
-    unsigned long timeout = millis();
-    if(servProcessing.available()) lireServ();
+    if(Serial2.available())  lireMega();
+    if(servProcessing.available())  lireServ();
     delay(3);
-    /*while (servProcessing.available() == 0) {
-        if (millis() - timeout > 5000) {
-            Serial.println(">>> servProcessing Timeout !");
-            servProcessing.stop();
-            connexion();
-        }
-    }
+}
 
-    // Read all the lines of the reply from server and print them to Serial
-    while(servProcessing.available()) {
-        String line = servProcessing.readStringUntil('\r');
-        ecrire(line);
-    } */
-
-    //unsigned long t = millis() - t1;
-    //ecrire("temps de rep"+String(t));
-    distance += 7;
-    angle ++;
-    if(distance >= 1000) distance = 0;
-    if(angle == 200) angle = 0;
-
+void lireMega (){
+  ecrire("Réception et envoie des données de la méga");
+  while(Serial2.available()) {
+    servProcessing.print(Serial2.readStringUntil('\r'));
+  }
+  ecrire("find de transmition données méga => processing");
 }
 
 void lireServ(){
+  ecrire("Réception et envoie des données de processing");
   while(servProcessing.available()) {
-        String line = servProcessing.readStringUntil('\r');
-        ecrire(line);
+        Serial2.print(servProcessing.readStringUntil('\r'));
   }
+  ecrire("find de transmition données processing => méga");
 }
 
 void connexion(){
