@@ -23,6 +23,6 @@ Ce projet est principalement réalisé avec une carte arduino Mega pour le robot
 
 <img src="/documentation/Images/processing3-logo.png" alt="Logo Processing" >
 
-Après avoir travaillé à deux sur ce projet durant un semestre, nous avons finalement rendu ce rapport récapitulant notre travail.
+Après avoir travaillé à deux sur ce projet durant un semestre, nous avons finalement rendu ce <a href="/documentation/Slam Arduino Bot - compte rendu de projet.pdf">rapport</a> récapitulant notre travail.
 
 <img src="/documentation/Images/schéma_final.jpg" alt="shéma projet" height =" 500 px" >
