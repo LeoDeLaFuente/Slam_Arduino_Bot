@@ -52,7 +52,7 @@ void loop(){
   Serial.println(res);
   
   servoX.write(angle);
-  delay(40);
+  delay(10);
   if(montee){
      if(angle<=160){
       angle ++;

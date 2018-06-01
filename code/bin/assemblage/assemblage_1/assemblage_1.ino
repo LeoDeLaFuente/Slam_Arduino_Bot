@@ -102,7 +102,7 @@ void setup() {  // Setup runs once per reset
     // setup lidar
     
     Serial1.begin(115200);
-    //Serial.begin(115200);
+    Serial.begin(115200);
     Serial2.begin(115200);
     
     servoX.attach(12);
@@ -134,16 +134,6 @@ void setup() {  // Setup runs once per reset
   timer.setInterval(1000/frequence_echantillonnage,asservissement_A);
   
   
-  
-  
-
-
-
-
-
-
-
-  
 }
 
 void loop() {
@@ -163,7 +153,7 @@ void loop() {
       avancer_tick=action(4,180);
       
       
-      etape=0;
+      //etape=0;
       
     }else if ( etape == 3 and ok){
       
@@ -182,7 +172,7 @@ void prise(){
     distance = mesure();
     delay(10); //  quoi sert ce delay ???
     String res = String(distance)+";"+String(angle)+";";
-    //Serial.println(res);
+    Serial.println(res);
     Serial2.println(res);
     
     servoX.write(angle);
@@ -261,12 +251,7 @@ void reinitialise(){
 
 void deplacement(){
    
-   
-      
-      
-      
 
-      
   /*    Serial.print(tick_codeuse_A);
       Serial.print(" | ");
       Serial.println(tick_codeuse_B);
@@ -285,9 +270,7 @@ void deplacement(){
       analogWrite(speedPinA, speed_A);//Sets speed variable via PWM 
       digitalWrite(dir1PinA, LOW);
       digitalWrite(dir2PinA, HIGH);
-  
-      
-      
+    
       
       break;
       
@@ -304,8 +287,6 @@ void deplacement(){
       digitalWrite(dir2PinA, LOW);
       
       break;
-      
-     
       
       default:
       // turn all the connections off if an unmapped key is pressed:
