@@ -150,4 +150,38 @@ Les roues n'étant pas exactement parrallèles entre elles, le valeur de l'entra
 
 - #### Combinaison du lidar et du robot.
 J ai regroupé les cablages du robot et du lidar sur l'arduino mega ainsi que créé un code qui est la combinaison des deux. Ainsi le robot peux maintenant se déplacer par exemple de 35 cm , faire des mesures avec le lidar, exécuter un demi-tour, puis refaire une mesure, et continuer ainsi. Il faut donc maintenant gérer les différents évènements qui vont arriver par la connexion wi-fi, pour les faire exécuter par le robot, et renvoyer les valeurs mesurées à l'ordinateur.  
+
 [Cette vidéo montre un test du nouveau code (assemblage_1)](https://youtu.be/nSwKWuOiDY0)
+
+
+## Séance du 9 Avril
+
+- #### Travail sur les commandes du robot
+J ai changé le code pour pouvoir permettre des actions simple sur le robot tout en effectuant nos mesures
+
+## Séance du 2 Mai
+
+- ####  Réorganisation
+Pour pouvoir mieux travailler sur le projet, j ai changé les emplacements des modules : les alimentations en dans l'étage inferieur du robot, et les cablages sur le dessus. J'ai eu beaucoup d'erreurs qui se sont ajouté au robot suite à cette réorganisation. 
+
+## Séance du 7 Mai
+
+- #### Débogage des erreurs lié à la réorganisation
+J ai du consacré une séance entière pour pouvoir comprendre d'où venaient les erreurs. 
+- #### Réparation du module lidar
+Notre module Lidar peut parfois commencer à bugger en renvoyant que des valeurs de distance constantes. Ces données sont donc inutilisable. J ai donc tenté de réparer  cela en ajoutant une capacité plus conséquentes entre l'alimentation et le lidar. En efet nous pensions que des appels de courants trop fort du lidar faisant que le courant de venaittrop faible pour l'alimenter. 
+Cette capacité n'a pas sembler améliorer le lidar.
+
+
+## Travail personnel du 25 Mai
+- #### Assemblage
+Nous avons travaillé ensemble avec félix pour pouvoir assembler tout le projet e final.  Nous avons un bug entre la liaison série de lrduino et l esp que nous ne comprenons pas.
+- #### Rédaction
+Nous avons profiter de cette séance pour commencer à rédiger le rapport
+
+## Travail personnel du  31 Mai
+- #### réorganisation, préparation de la présentation
+Nous avons tenté de résoudre les bugs autour de la connexion, mais ceux-ci nous sont incompréhensible. Nous avons donc préparer notre présentation et préparer les codes pour les différentes fonctionnalités des modules.
+
+## Séance du 1 Juin
+- #### Présentation de notre projet devant la classe et nos professeurs.
