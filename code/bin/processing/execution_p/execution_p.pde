@@ -16,9 +16,9 @@ void setup(){
   size(1200,700); 
   String[] serialPorts = Serial.list();
   printArray(serialPorts);
-  String portName = serialPorts[32]; 
+  String portName = serialPorts[0]; 
   println(portName);
-  myPort = new Serial(this, portName, 115200);
+  myPort = new Serial(this, portName, 9600);
   myPort.bufferUntil('\n');
   frameRate(30); 
   data = new ArrayList<float[]>();
@@ -84,7 +84,32 @@ void serialEvent (Serial myPort){
     String inString = myPort.readStringUntil('\n'); // chaine stockant la chaîne reçue sur le port Série
     if (inString != null){ // si la chaine recue n'est pas vide
       println(inString);
-      float posX = 0;
+            try{
+              String[] spl1 = inString.split("::");
+        for(String atraiter : spl1){
+          println(atraiter);
+          String [] spl2 = atraiter.split(";");
+          int i = 0;
+          String sDistance = "";
+          String sAngle = "";
+          
+          for( String s : spl2){
+            if( s.equals("distance")){
+              sDistance = spl2[i+1];
+            }
+            if( s.equals("angle")){
+              sAngle = spl2[i+1];
+            }
+            ajoutData(sDistance,sAngle);
+            i++;
+          }
+          
+          if( !(sDistance.equals("")) && !(sAngle.equals(""))){
+            ajoutData(sDistance,sAngle);
+          }
+        }
+      } catch(Exception e ){ println(e);}
+    /*  float posX = 0;
       float posY = 0;
       float orientation =float(30/180)*PI;
       String [] spl = inString.split(";");
@@ -94,10 +119,24 @@ void serialEvent (Serial myPort){
       float pntY = posY + sin(ang+orientation)*distance;
       float [] arr = {pntX, pntY, posX, posY, orientation};
       while(!pass);
-      stock.add(arr);
+      stock.add(arr); */
     }
   }
 } 
+
+void ajoutData(String sDistance, String sAngle){
+  if(sDistance.equals("") || sAngle.equals("")) return;
+    float posX = 0;
+    float posY = 0;
+    float orientation =float(1/4)*PI;
+    int distance =  Integer.parseInt(sDistance);
+    float ang =  ang = float(sAngle)/180*PI;
+    float pntX = posX + cos(ang+orientation)*distance;
+    float pntY = posY + sin(ang+orientation)*distance;
+    float [] arr = {pntX, pntY, posX, posY, orientation };
+    while(!pass);
+    stock.add(arr);
+}
 
 
 //---------------- Fonctions de gestion des entrées clavier --------------
