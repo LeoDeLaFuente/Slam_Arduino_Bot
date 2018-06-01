@@ -134,13 +134,19 @@ void loop() {
       prise();
       delay(2000);
       reinitialise();
-      avancer_tick=action(1,35);
+      avancer_tick=action(1,27);
       
     }else if (etape==2 and ok){
       prise();
       delay(2000);
       reinitialise();
-      avancer_tick=action(4,180);
+      avancer_tick=action(4,90);
+    
+    }else if (etape==3 and ok){
+      prise();
+      delay(2000);
+      reinitialise();
+      avancer_tick=action(1,3);
     }
 }
 
